@@ -3,6 +3,8 @@
   "routes": [
     { "handle": "filesystem" },
     { "src": "/cafes", "dest": "/cafes.html" },
+    { "src": "/help", "dest": "/help.html" },
+    { "src": "/legal", "dest": "/legal.html" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

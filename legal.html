@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<title>Taplo | Legal & Trust</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdf9f3; color: #1A1A2E; }
+  .font-serif { font-family: 'DM Serif Display', serif; }
+  .grain-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 9999; opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .editorial-shadow { box-shadow: 0 32px 64px -12px rgba(26, 26, 46, 0.08); }
+  .text-inked { letter-spacing: -0.02em; }
+</style>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "tertiary-container": "#5d5c73", "on-secondary": "#ffffff", "secondary": "#ab3500",
+          "surface-container-high": "#ebe8e2", "surface-container-highest": "#e6e2dc",
+          "error-container": "#ffdad6", "surface-container": "#f1ede7", "outline": "#6f7a72",
+          "on-primary-fixed": "#002113", "on-background": "#1c1c18",
+          "surface-container-low": "#f7f3ed", "primary-fixed": "#a6f3c9",
+          "on-surface-variant": "#3f4943", "primary-container": "#1b6b4a",
+          "tertiary-fixed": "#e2e0fc", "secondary-container": "#fe6a34",
+          "on-tertiary": "#ffffff", "on-error-container": "#93000a", "on-surface": "#1c1c18",
+          "surface-container-lowest": "#ffffff", "surface": "#fdf9f3", "surface-bright": "#fdf9f3",
+          "outline-variant": "#bfc9c0", "on-secondary-container": "#5d1900",
+          "surface-tint": "#1b6b4a", "primary": "#005235", "inverse-primary": "#8ad6ae",
+          "on-error": "#ffffff", "on-secondary-fixed-variant": "#832600",
+          "on-tertiary-fixed": "#1a1a2e", "on-primary": "#ffffff", "inverse-surface": "#31302d",
+          "secondary-fixed-dim": "#ffb59d", "inverse-on-surface": "#f4f0ea",
+          "surface-variant": "#e6e2dc", "on-tertiary-container": "#d8d6f1",
+          "error": "#ba1a1a", "primary-fixed-dim": "#8ad6ae", "surface-dim": "#ddd9d4",
+          "tertiary": "#45455b", "on-tertiary-fixed-variant": "#45455b",
+          "on-primary-fixed-variant": "#005235", "secondary-fixed": "#ffdbd0",
+          "background": "#fdf9f3", "on-primary-container": "#9ce9bf",
+          "on-secondary-fixed": "#390c00", "tertiary-fixed-dim": "#c6c4df"
+        },
+        fontFamily: {
+          "headline": ["DM Serif Display", "serif"],
+          "body": ["Plus Jakarta Sans", "sans-serif"],
+          "label": ["Plus Jakarta Sans", "sans-serif"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden">
+<div class="grain-overlay"></div>
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#fdf9f3]/80 backdrop-blur-lg shadow-[0_20px_40px_rgba(26,26,46,0.04)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-5">
+  <a class="font-headline text-2xl italic text-[#1A1A2E]" href="/">Taplo</a>
+  <div class="hidden md:flex items-center gap-10 text-sm tracking-tight font-medium">
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/">Experience</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/cafes">For Cafes</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/help">Help</a>
+    <a class="text-[#1B6B4A] font-bold border-b-2 border-[#1B6B4A] pb-1" href="/legal">Legal</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <a class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-sm font-semibold active:scale-95 transition-all hidden md:inline-block" href="/#get-pass">Get Your Free Pass</a>
+    <button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="material-symbols-outlined text-on-surface">menu</span>
+    </button>
+  </div>
+</div>
+<div id="mobile-menu" class="hidden md:hidden px-6 pb-6 space-y-4 bg-[#fdf9f3]/95 backdrop-blur-lg">
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/">Home</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/cafes">For Cafes</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/help">Help Center</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/legal">Legal & Trust</a>
+  <a href="/#get-pass" class="block bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-center">Get Your Free Pass</a>
+</div>
+</nav>
+
+<main>
+<!-- Hero Section -->
+<section class="pt-44 pb-16 px-6 md:px-8 max-w-5xl mx-auto">
+  <h1 class="font-headline text-6xl md:text-7xl text-inked text-on-background leading-[0.95] mb-6">Legal & <span class="text-primary italic">Trust</span>.</h1>
+  <p class="text-on-surface-variant text-xl max-w-2xl leading-relaxed">
+    Operating with transparency in Bali's coffee scene. Our commitment to your data is as strong as our commitment to your next free coffee.
+  </p>
+</section>
+
+<!-- Bento Trust Grid -->
+<section class="px-6 md:px-8 max-w-5xl mx-auto pb-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-[2rem] editorial-shadow relative overflow-hidden">
+    <div class="relative z-10">
+      <span class="text-secondary font-label text-xs font-bold tracking-[0.2em] uppercase mb-4 block">What Taplo Is</span>
+      <h2 class="font-headline text-3xl mb-4">A Loyalty Platform</h2>
+      <p class="text-on-surface-variant leading-relaxed mb-6">
+        Taplo provides the infrastructure for cafes to reward their communities with digital stamp cards. We handle the loyalty logic — you handle the coffee.
+      </p>
+      <div class="flex items-center gap-3 bg-surface-container-high p-4 rounded-xl">
+        <span class="material-symbols-outlined text-secondary">info</span>
+        <p class="text-sm font-semibold text-on-surface">Taplo is not a bank, payment processor, or digital wallet.</p>
+      </div>
+    </div>
+    <div class="absolute -right-10 -bottom-10 opacity-5">
+      <span class="material-symbols-outlined text-[180px]">account_balance_wallet</span>
+    </div>
+  </div>
+  <div class="bg-primary rounded-[2rem] p-10 relative overflow-hidden">
+    <span class="material-symbols-outlined text-on-primary-container text-4xl mb-6" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+    <h2 class="font-headline text-2xl mb-3 text-on-primary-container">PDP Compliant</h2>
+    <p class="text-on-primary-container/80 text-sm leading-relaxed">
+      Fully compliant with Indonesia's Personal Data Protection regulations. Your coffee habits remain your own business.
+    </p>
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="legalNoise"><feTurbulence baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/></filter><rect filter="url(#legalNoise)" height="100%" width="100%"/></svg>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Legal Documentation -->
+<section class="py-32 bg-surface-container-low px-6 md:px-8 rounded-t-[3rem] md:rounded-t-[5rem]">
+<div class="max-w-5xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-[220px_1fr] gap-16">
+  <!-- Sticky Nav -->
+  <aside class="hidden lg:block">
+    <div class="sticky top-32 space-y-6">
+      <nav class="flex flex-col gap-4">
+        <a class="text-sm font-bold text-primary flex items-center gap-2" href="#terms">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Terms of Service
+        </a>
+        <a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="#privacy">Privacy Policy</a>
+        <a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="#non-payment">Non-Payment Clause</a>
+        <a class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors" href="#data">Data We Collect</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Legal Text -->
+  <div class="space-y-20">
+    <!-- Terms of Service -->
+    <section class="scroll-mt-32" id="terms">
+      <h3 class="font-headline text-4xl mb-8 border-b border-outline-variant/20 pb-4">01. Terms of Service</h3>
+      <div class="text-on-surface-variant space-y-6 leading-loose text-lg">
+        <p>
+          By using Taplo, you agree to these terms. Our platform facilitates digital loyalty stamps and rewards for cafes in Bali. Simple as that.
+        </p>
+        <h4 class="font-bold text-on-surface text-base uppercase tracking-tight">Financial Clarity</h4>
+        <p>
+          Taplo does not process monetary transactions between customers and merchants. All financial exchanges happen through your chosen payment method directly at the cafe. Taplo records your <span class="text-primary italic font-semibold">visits</span> and <span class="text-primary italic font-semibold">rewards</span>, nothing more.
+        </p>
+        <ul class="list-none space-y-4 pl-6 border-l-2 border-secondary/30">
+          <li><strong class="text-on-surface">Eligibility:</strong> Users must be 18 years of age or have legal guardian consent to participate.</li>
+          <li><strong class="text-on-surface">Reward Rules:</strong> Individual cafes define their own stamp thresholds and reward types. Taplo provides the platform, not the liability.</li>
+          <li><strong class="text-on-surface">Fair Use:</strong> Any attempt to manipulate stamp counts or QR codes results in immediate account suspension.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="scroll-mt-32" id="privacy">
+      <h3 class="font-headline text-4xl mb-8 border-b border-outline-variant/20 pb-4">02. Privacy Policy</h3>
+      <div class="text-on-surface-variant space-y-6 leading-loose text-lg">
+        <p>
+          Privacy isn't a feature — it's our foundation. We treat your data with the same care you'd expect from a trusted local spot.
+        </p>
+        <p>
+          We never sell your data to third-party brokers. Your visit history is shared only with the specific cafes you choose to visit, so they can provide you a better experience.
+        </p>
+      </div>
+    </section>
+
+    <!-- Data We Collect -->
+    <section class="scroll-mt-32" id="data">
+      <h3 class="font-headline text-4xl mb-8 border-b border-outline-variant/20 pb-4">03. Data We Collect</h3>
+      <div class="bg-surface-container-lowest p-10 rounded-[2rem] editorial-shadow">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl">id_card</span>
+            </div>
+            <div>
+              <p class="font-bold text-on-surface mb-1">Identity Data</p>
+              <p class="text-on-surface-variant text-sm">Your name and email, used for loyalty pass synchronization.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl">history</span>
+            </div>
+            <div>
+              <p class="font-bold text-on-surface mb-1">Visit Timestamps</p>
+              <p class="text-on-surface-variant text-sm">When you visited a cafe, to validate stamp eligibility.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+            </div>
+            <div>
+              <p class="font-bold text-on-surface mb-1">Location Data</p>
+              <p class="text-on-surface-variant text-sm">Used only to suggest nearby participating cafes.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-xl">devices</span>
+            </div>
+            <div>
+              <p class="font-bold text-on-surface mb-1">Device Info</p>
+              <p class="text-on-surface-variant text-sm">Basic technical data to ensure your pass works smoothly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Non-Payment Clause -->
+    <section class="scroll-mt-32" id="non-payment">
+      <h3 class="font-headline text-4xl mb-8 border-b border-outline-variant/20 pb-4">04. The Non-Payment Clause</h3>
+      <div class="text-on-surface-variant space-y-6 leading-loose text-lg">
+        <div class="bg-surface-container-highest p-8 rounded-[2rem] border-l-4 border-secondary">
+          <p class="text-on-surface italic font-headline text-xl leading-relaxed">
+            "Taplo is a communication and ledger layer. We do not hold, move, or store fiat currency or digital assets."
+          </p>
+        </div>
+        <p>
+          While our interface may feel modern and polished, our platform does not connect to banking systems or payment rails. All digital stamps hold no cash value outside each cafe's specific rewards program, and cannot be redeemed for money through Taplo.
+        </p>
+        <p>
+          Merchants fund their own rewards — when you earn a free coffee, that's a gift from your cafe, not from Taplo. This keeps us outside payment regulations and keeps things simple for everyone.
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full border-t border-[#1B6B4A]/10">
+<div class="max-w-7xl mx-auto py-16 px-6 md:px-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div class="md:col-span-2">
+      <a class="font-headline text-2xl italic text-[#1A1A2E] block mb-4" href="/">Taplo</a>
+      <p class="text-on-surface-variant max-w-sm mb-6">Simple digital loyalty for Bali's independent cafes. Scan, earn stamps, get free coffee.</p>
+    </div>
+    <div>
+      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">Explore</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/#how-it-works">How It Works</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/#venues">Venues</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/#get-pass">Get Your Pass</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">Company</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-secondary font-semibold hover:text-[#1B6B4A] transition-colors" href="/cafes">For Cafes</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/help">Help Center</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/legal">Legal & Trust</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-12 pt-8 border-t border-[#1B6B4A]/5 flex flex-col md:flex-row justify-between items-center gap-4">
+    <span class="text-sm text-on-surface-variant/50">&copy; 2026 Taplo. Crafted in Bali.</span>
+    <span class="text-sm text-on-surface-variant/50">hello@taplo.org</span>
+  </div>
+</div>
+</footer>
+</body>
+</html>
