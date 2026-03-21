@@ -57,7 +57,7 @@
 <!-- Navigation -->
 <nav class="fixed top-0 w-full z-50 bg-[#fdf9f3]/80 backdrop-blur-lg shadow-[0_20px_40px_rgba(26,26,46,0.04)]">
 <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-5">
-  <a class="font-headline text-2xl italic text-[#1A1A2E]" href="/">Taplo</a>
+  <a class="font-headline text-2xl italic text-[#1A1A2E]" href="/" onclick="if(window.location.pathname==='/'){event.preventDefault();window.location.reload()}">Taplo</a>
   <div class="hidden md:flex items-center gap-10 text-sm tracking-tight font-medium">
     <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/">Experience</a>
     <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/venues">Venues</a>
