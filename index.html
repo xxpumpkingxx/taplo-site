@@ -24,6 +24,8 @@
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
   .editorial-shadow { box-shadow: 0 32px 64px -12px rgba(26, 26, 46, 0.08); }
   .text-inked { letter-spacing: -0.02em; }
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
 </style>
 <script>
   tailwind.config = {
@@ -72,9 +74,9 @@
   <a class="font-headline text-2xl italic text-[#1A1A2E]" href="/">Taplo</a>
   <div class="hidden md:flex items-center gap-10 text-sm tracking-tight font-medium">
     <a class="text-[#1B6B4A] font-bold border-b-2 border-[#1B6B4A] pb-1" href="/">Experience</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/venues">Venues</a>
     <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/cafes">For Cafes</a>
-    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/help">Help</a>
-    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/legal">Legal</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/about">About</a>
   </div>
   <div class="flex items-center gap-4">
     <a class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-sm font-semibold active:scale-95 transition-all hidden md:inline-block" href="#get-pass">Get Your Free Pass</a>
@@ -85,10 +87,10 @@
 </div>
 <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 space-y-4 bg-[#fdf9f3]/95 backdrop-blur-lg">
   <a class="block text-[#1A1A2E]/70 font-medium" href="#how-it-works">How It Works</a>
-  <a class="block text-[#1A1A2E]/70 font-medium" href="#venues">Venues</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/venues">Venues</a>
   <a class="block text-[#1A1A2E]/70 font-medium" href="/cafes">For Cafes</a>
-  <a class="block text-[#1A1A2E]/70 font-medium" href="/help">Help Center</a>
-  <a class="block text-[#1A1A2E]/70 font-medium" href="/legal">Legal & Trust</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/about">About</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/help">Help</a>
   <a href="#get-pass" class="block bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-center">Get Your Free Pass</a>
 </div>
 </nav>
@@ -429,14 +431,15 @@
       <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">Explore</h5>
       <ul class="space-y-3 text-sm">
         <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="#how-it-works">How It Works</a></li>
-        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="#venues">Venues</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/venues">Venues</a></li>
         <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="#get-pass">Get Your Pass</a></li>
       </ul>
     </div>
     <div>
-      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">For Cafes</h5>
+      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">Company</h5>
       <ul class="space-y-3 text-sm">
         <li><a class="text-secondary font-semibold hover:text-[#1B6B4A] transition-colors" href="/cafes">For Cafes</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/about">About</a></li>
         <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/help">Help Center</a></li>
         <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/legal">Legal & Trust</a></li>
       </ul>
@@ -454,5 +457,14 @@
   </div>
 </div>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('main > section, main > section > div > div').forEach(el => el.classList.add('fade-up'));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+});
+</script>
 </body>
 </html>

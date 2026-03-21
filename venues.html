@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<title>Taplo | Partner Venues in Canggu</title>
+<meta name="description" content="Find Taplo partner cafes in Canggu, Bali. Earn stamps at specialty coffee shops, brunch spots, and coworking cafes."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdf9f3; color: #1A1A2E; }
+  .font-serif { font-family: 'DM Serif Display', serif; }
+  .grain-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .editorial-shadow { box-shadow: 0 32px 64px -12px rgba(26, 26, 46, 0.08); }
+  .text-inked { letter-spacing: -0.02em; }
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: { extend: {
+      colors: { "tertiary-container": "#5d5c73", "on-secondary": "#ffffff", "secondary": "#ab3500", "surface-container-high": "#ebe8e2", "surface-container-highest": "#e6e2dc", "error-container": "#ffdad6", "surface-container": "#f1ede7", "outline": "#6f7a72", "on-primary-fixed": "#002113", "on-background": "#1c1c18", "surface-container-low": "#f7f3ed", "primary-fixed": "#a6f3c9", "on-surface-variant": "#3f4943", "primary-container": "#1b6b4a", "tertiary-fixed": "#e2e0fc", "secondary-container": "#fe6a34", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "on-surface": "#1c1c18", "surface-container-lowest": "#ffffff", "surface": "#fdf9f3", "surface-bright": "#fdf9f3", "outline-variant": "#bfc9c0", "on-secondary-container": "#5d1900", "surface-tint": "#1b6b4a", "primary": "#005235", "inverse-primary": "#8ad6ae", "on-error": "#ffffff", "on-secondary-fixed-variant": "#832600", "on-tertiary-fixed": "#1a1a2e", "on-primary": "#ffffff", "inverse-surface": "#31302d", "secondary-fixed-dim": "#ffb59d", "inverse-on-surface": "#f4f0ea", "surface-variant": "#e6e2dc", "on-tertiary-container": "#d8d6f1", "error": "#ba1a1a", "primary-fixed-dim": "#8ad6ae", "surface-dim": "#ddd9d4", "tertiary": "#45455b", "on-tertiary-fixed-variant": "#45455b", "on-primary-fixed-variant": "#005235", "secondary-fixed": "#ffdbd0", "background": "#fdf9f3", "on-primary-container": "#9ce9bf", "on-secondary-fixed": "#390c00", "tertiary-fixed-dim": "#c6c4df" },
+      fontFamily: { "headline": ["DM Serif Display", "serif"], "body": ["Plus Jakarta Sans", "sans-serif"] },
+      borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+    }}
+  }
+</script>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden">
+<div class="grain-overlay"></div>
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#fdf9f3]/80 backdrop-blur-lg shadow-[0_20px_40px_rgba(26,26,46,0.04)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-5">
+  <a class="font-headline text-2xl italic text-[#1A1A2E]" href="/">Taplo</a>
+  <div class="hidden md:flex items-center gap-10 text-sm tracking-tight font-medium">
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/">Experience</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/venues">Venues</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/cafes">For Cafes</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/about">About</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <a class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-sm font-semibold active:scale-95 transition-all hidden md:inline-block" href="/#get-pass">Get Your Free Pass</a>
+    <button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="material-symbols-outlined text-on-surface">menu</span>
+    </button>
+  </div>
+</div>
+<div id="mobile-menu" class="hidden md:hidden px-6 pb-6 space-y-4 bg-[#fdf9f3]/95 backdrop-blur-lg">
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/">Home</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/venues">Venues</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/cafes">For Cafes</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/about">About</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/help">Help</a>
+  <a href="/#get-pass" class="block bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-center">Get Your Free Pass</a>
+</div>
+</nav>
+
+<main>
+<!-- Hero -->
+<section class="pt-44 pb-16 px-6 md:px-8 max-w-5xl mx-auto">
+  <span class="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2 rounded-full text-sm uppercase tracking-[0.15em] font-bold mb-8">
+    <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">location_on</span>
+    Canggu & Beyond
+  </span>
+  <h1 class="font-headline text-6xl md:text-7xl text-inked text-on-background leading-[0.95] mb-6">Find a Taplo cafe.</h1>
+  <p class="text-on-surface-variant text-xl max-w-2xl leading-relaxed">
+    Every cafe below accepts Taplo stamps. Walk in, scan the QR, and start earning toward your next free coffee.
+  </p>
+</section>
+
+<!-- Area Filters -->
+<section class="px-6 md:px-8 max-w-5xl mx-auto pb-12">
+  <div class="flex flex-wrap gap-3">
+    <button class="bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-bold">All Areas</button>
+    <button class="bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow hover:bg-surface-container-high transition-colors">Canggu</button>
+    <button class="bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow hover:bg-surface-container-high transition-colors">Berawa</button>
+    <button class="bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow hover:bg-surface-container-high transition-colors">Pererenan</button>
+    <button class="bg-surface-container-lowest text-on-surface-variant/40 px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow cursor-default">Seminyak <span class="text-xs">(soon)</span></button>
+    <button class="bg-surface-container-lowest text-on-surface-variant/40 px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow cursor-default">Ubud <span class="text-xs">(soon)</span></button>
+  </div>
+</section>
+
+<!-- Cafe Listings -->
+<section class="px-6 md:px-8 max-w-5xl mx-auto pb-32">
+<div class="grid md:grid-cols-2 gap-8">
+  <!-- Cafe Card -->
+  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="Crate Cafe Canggu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChS9TnmOlpAH9U1rXHNc6UQ3o8V763tyQ8GNQgb87_-qScg3phe8GyFP2L-GfvnsgP8Jubcd2nUSHRMPYslhvCcG1FUvSKLEvyLST-abW35lI_8G9no41LCGpXRLvjwN7cozrniRqCtTw9XHIEuznem82pdteP3IuB-i3AIec_pIbKWI1toKjLcMlgrPyQn4Yz85B-vUvQJco7pTj14WL_7fQ_6mG1aB30OBSjvz9WCRY8vOhVO2YIcu5GzVLDQS-xF8ua7yg7TQ"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">Crate Cafe</h3>
+        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Canggu Padang Linjong
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Iconic Canggu brunch spot. Healthy bowls, great coffee, and one of the OG Taplo partners.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Brunch</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Specialty Coffee</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">WiFi</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="Hungry Bird Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5cHkT3ijOteRx0GHBRfTX74uPDaVS-famo_l84LITFGNWGs8R-6sRzwAFz8x0Ulb8X4nxLrtMFejlsHEShzPF4Z_a_Bd5hnOJQsrPYSd1TGtPuYUI_HT04GWtByMeiG2Hn9373PEPSYVxWJetVs5e0G0SQM0xJ-2-K1jFHko3Tox9KXf-nfh4O9I3EcrfMXU_lTO8H54cu2PbTf1oD_p9N0ecvdkOKgawuIGTqUBy232XaqA5yWsK93rOWb1XUWjBZTH22RBzHw"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">Hungry Bird</h3>
+        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Raya Semat
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Specialty roasters with single-origin beans. Known for their pour-over and cold brew.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Specialty Roaster</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Pour Over</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="Machinery Cafe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChS9TnmOlpAH9U1rXHNc6UQ3o8V763tyQ8GNQgb87_-qScg3phe8GyFP2L-GfvnsgP8Jubcd2nUSHRMPYslhvCcG1FUvSKLEvyLST-abW35lI_8G9no41LCGpXRLvjwN7cozrniRqCtTw9XHIEuznem82pdteP3IuB-i3AIec_pIbKWI1toKjLcMlgrPyQn4Yz85B-vUvQJco7pTj14WL_7fQ_6mG1aB30OBSjvz9WCRY8vOhVO2YIcu5GzVLDQS-xF8ua7yg7TQ"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">Machinery Cafe</h3>
+        <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">brunch_dining</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Berawa, Jl. Pantai Berawa
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Industrial-chic brunch spot with excellent espresso. Great for the morning crowd.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Brunch</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Espresso</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">WiFi</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="ZIN Cafe coworking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5cHkT3ijOteRx0GHBRfTX74uPDaVS-famo_l84LITFGNWGs8R-6sRzwAFz8x0Ulb8X4nxLrtMFejlsHEShzPF4Z_a_Bd5hnOJQsrPYSd1TGtPuYUI_HT04GWtByMeiG2Hn9373PEPSYVxWJetVs5e0G0SQM0xJ-2-K1jFHko3Tox9KXf-nfh4O9I3EcrfMXU_lTO8H54cu2PbTf1oD_p9N0ecvdkOKgawuIGTqUBy232XaqA5yWsK93rOWb1XUWjBZTH22RBzHw"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">ZIN Cafe</h3>
+        <span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">laptop_mac</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Pantai Batu Bolong
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Coworking-friendly with fast WiFi, power outlets everywhere, and solid flat whites.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Coworking</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Fast WiFi</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Power Outlets</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="BGS Bali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChS9TnmOlpAH9U1rXHNc6UQ3o8V763tyQ8GNQgb87_-qScg3phe8GyFP2L-GfvnsgP8Jubcd2nUSHRMPYslhvCcG1FUvSKLEvyLST-abW35lI_8G9no41LCGpXRLvjwN7cozrniRqCtTw9XHIEuznem82pdteP3IuB-i3AIec_pIbKWI1toKjLcMlgrPyQn4Yz85B-vUvQJco7pTj14WL_7fQ_6mG1aB30OBSjvz9WCRY8vOhVO2YIcu5GzVLDQS-xF8ua7yg7TQ"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">BGS</h3>
+        <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">brunch_dining</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Pantai Batu Mejan
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Surf-meets-brunch vibes. Smoothie bowls, eggs benny, and strong batch brew on the deck.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Brunch</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Smoothies</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Surf Vibes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="Milk and Madu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5cHkT3ijOteRx0GHBRfTX74uPDaVS-famo_l84LITFGNWGs8R-6sRzwAFz8x0Ulb8X4nxLrtMFejlsHEShzPF4Z_a_Bd5hnOJQsrPYSd1TGtPuYUI_HT04GWtByMeiG2Hn9373PEPSYVxWJetVs5e0G0SQM0xJ-2-K1jFHko3Tox9KXf-nfh4O9I3EcrfMXU_lTO8H54cu2PbTf1oD_p9N0ecvdkOKgawuIGTqUBy232XaqA5yWsK93rOWb1XUWjBZTH22RBzHw"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">Milk & Madu</h3>
+        <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">brunch_dining</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Berawa, Jl. Pantai Berawa
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Family-friendly with a huge menu. Great lattes, big portions, and a relaxed garden setting.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Family</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Garden</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">All-Day</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- More Coming -->
+<div class="mt-16 text-center">
+  <div class="bg-surface-container-highest rounded-[2rem] p-12 max-w-2xl mx-auto">
+    <span class="material-symbols-outlined text-primary text-5xl mb-4">add_business</span>
+    <h3 class="font-headline text-2xl mb-3">More cafes joining weekly</h3>
+    <p class="text-on-surface-variant mb-6">We're actively onboarding cafes across Canggu, Berawa, and Pererenan. Seminyak and Ubud coming next.</p>
+    <a class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 active:scale-95 transition-transform" href="/cafes">
+      <span class="material-symbols-outlined">storefront</span>
+      List your cafe
+    </a>
+  </div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full border-t border-[#1B6B4A]/10">
+<div class="max-w-7xl mx-auto py-16 px-6 md:px-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div class="md:col-span-2">
+      <a class="font-headline text-2xl italic text-[#1A1A2E] block mb-4" href="/">Taplo</a>
+      <p class="text-on-surface-variant max-w-sm mb-6">Simple digital loyalty for Bali's independent cafes. Scan, earn stamps, get free coffee.</p>
+    </div>
+    <div>
+      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">Explore</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/#how-it-works">How It Works</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/venues">Venues</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/#get-pass">Get Your Pass</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">Company</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-secondary font-semibold hover:text-[#1B6B4A] transition-colors" href="/cafes">For Cafes</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/about">About</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/help">Help Center</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/legal">Legal & Trust</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-12 pt-8 border-t border-[#1B6B4A]/5 flex flex-col md:flex-row justify-between items-center gap-4">
+    <span class="text-sm text-on-surface-variant/50">&copy; 2026 Taplo. Crafted in Bali.</span>
+    <div class="flex items-center gap-6">
+      <a class="text-on-surface-variant/50 hover:text-[#1B6B4A] transition-colors flex items-center gap-1.5 text-sm" href="https://instagram.com/taplo.bali" target="_blank">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @taplo.bali
+      </a>
+      <span class="text-sm text-on-surface-variant/50">hello@taplo.org</span>
+    </div>
+  </div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('main > section, main > section > div > div').forEach(el => el.classList.add('fade-up'));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+});
+</script>
+</body>
+</html>

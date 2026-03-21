@@ -5,6 +5,9 @@
     { "src": "/cafes", "dest": "/cafes.html" },
     { "src": "/help", "dest": "/help.html" },
     { "src": "/legal", "dest": "/legal.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/about", "dest": "/about.html" },
+    { "src": "/venues", "dest": "/venues.html" },
+    { "src": "/onboard", "dest": "/onboard.html" },
+    { "src": "/(.*)", "dest": "/404.html" }
   ]
 }

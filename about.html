@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<title>Taplo | About — Why We're Building This</title>
+<meta name="description" content="Taplo is a digital loyalty platform for Bali's independent cafes. Built in Canggu, designed for the coffee culture we love."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdf9f3; color: #1A1A2E; }
+  .font-serif { font-family: 'DM Serif Display', serif; }
+  .grain-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .editorial-shadow { box-shadow: 0 32px 64px -12px rgba(26, 26, 46, 0.08); }
+  .text-inked { letter-spacing: -0.02em; }
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: { extend: {
+      colors: { "tertiary-container": "#5d5c73", "on-secondary": "#ffffff", "secondary": "#ab3500", "surface-container-high": "#ebe8e2", "surface-container-highest": "#e6e2dc", "error-container": "#ffdad6", "surface-container": "#f1ede7", "outline": "#6f7a72", "on-primary-fixed": "#002113", "on-background": "#1c1c18", "surface-container-low": "#f7f3ed", "primary-fixed": "#a6f3c9", "on-surface-variant": "#3f4943", "primary-container": "#1b6b4a", "tertiary-fixed": "#e2e0fc", "secondary-container": "#fe6a34", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "on-surface": "#1c1c18", "surface-container-lowest": "#ffffff", "surface": "#fdf9f3", "surface-bright": "#fdf9f3", "outline-variant": "#bfc9c0", "on-secondary-container": "#5d1900", "surface-tint": "#1b6b4a", "primary": "#005235", "inverse-primary": "#8ad6ae", "on-error": "#ffffff", "on-secondary-fixed-variant": "#832600", "on-tertiary-fixed": "#1a1a2e", "on-primary": "#ffffff", "inverse-surface": "#31302d", "secondary-fixed-dim": "#ffb59d", "inverse-on-surface": "#f4f0ea", "surface-variant": "#e6e2dc", "on-tertiary-container": "#d8d6f1", "error": "#ba1a1a", "primary-fixed-dim": "#8ad6ae", "surface-dim": "#ddd9d4", "tertiary": "#45455b", "on-tertiary-fixed-variant": "#45455b", "on-primary-fixed-variant": "#005235", "secondary-fixed": "#ffdbd0", "background": "#fdf9f3", "on-primary-container": "#9ce9bf", "on-secondary-fixed": "#390c00", "tertiary-fixed-dim": "#c6c4df" },
+      fontFamily: { "headline": ["DM Serif Display", "serif"], "body": ["Plus Jakarta Sans", "sans-serif"] },
+      borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+    }}
+  }
+</script>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden">
+<div class="grain-overlay"></div>
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#fdf9f3]/80 backdrop-blur-lg shadow-[0_20px_40px_rgba(26,26,46,0.04)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-5">
+  <a class="font-headline text-2xl italic text-[#1A1A2E]" href="/">Taplo</a>
+  <div class="hidden md:flex items-center gap-10 text-sm tracking-tight font-medium">
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/">Experience</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/venues">Venues</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/cafes">For Cafes</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/about">About</a>
+  </div>
+  <div class="flex items-center gap-4">
+    <a class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-sm font-semibold active:scale-95 transition-all hidden md:inline-block" href="/#get-pass">Get Your Free Pass</a>
+    <button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="material-symbols-outlined text-on-surface">menu</span>
+    </button>
+  </div>
+</div>
+<div id="mobile-menu" class="hidden md:hidden px-6 pb-6 space-y-4 bg-[#fdf9f3]/95 backdrop-blur-lg">
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/">Home</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/venues">Venues</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/cafes">For Cafes</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/about">About</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/help">Help</a>
+  <a href="/#get-pass" class="block bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-center">Get Your Free Pass</a>
+</div>
+</nav>
+
+<main>
+<!-- Hero -->
+<section class="pt-44 pb-20 px-6 md:px-8 max-w-4xl mx-auto">
+  <span class="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-5 py-2 rounded-full text-sm uppercase tracking-[0.15em] font-bold mb-8">
+    <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">favorite</span>
+    Our Story
+  </span>
+  <h1 class="font-headline text-6xl md:text-7xl text-inked text-on-background leading-[0.95] mb-8">We love Bali's<br/>coffee scene.</h1>
+  <p class="text-on-surface-variant text-xl max-w-2xl leading-relaxed">
+    Taplo started because we were tired of losing paper stamp cards. Every cafe had a different one, they'd get soggy in the rain, forgotten at the villa, or just lost. We thought: what if your loyalty card lived in your phone, worked everywhere, and never got lost?
+  </p>
+</section>
+
+<!-- Mission -->
+<section class="py-24 bg-surface-container-low px-6 md:px-8 rounded-t-[3rem] md:rounded-t-[5rem]">
+<div class="max-w-5xl mx-auto">
+  <div class="grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <span class="text-secondary font-label text-xs uppercase tracking-[0.2em] font-bold block mb-4">The Mission</span>
+      <h2 class="font-headline text-4xl md:text-5xl mb-6">Help every independent cafe build real customer loyalty.</h2>
+      <p class="text-on-surface-variant text-lg leading-relaxed mb-6">
+        Big chains have apps, data, and loyalty programs. Your local cafe has great coffee and a paper card. We're here to level that playing field.
+      </p>
+      <p class="text-on-surface-variant text-lg leading-relaxed">
+        Taplo gives independent cafes the same loyalty tools as Starbucks — without the app, the complexity, or the cost.
+      </p>
+    </div>
+    <div class="space-y-6">
+      <div class="bg-surface-container-lowest p-8 rounded-[2rem] editorial-shadow">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4" style="font-variation-settings: 'FILL' 1;">storefront</span>
+        <h3 class="font-headline text-xl mb-2">Built for independents</h3>
+        <p class="text-on-surface-variant">Not chains. Not franchises. The cafes where the barista knows your order.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-[2rem] editorial-shadow">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-4" style="font-variation-settings: 'FILL' 1;">location_on</span>
+        <h3 class="font-headline text-xl mb-2">Starting in Canggu</h3>
+        <p class="text-on-surface-variant">We're launching where we live. Canggu first, then Seminyak, Ubud, and the rest of Bali.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-[2rem] editorial-shadow">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+        <h3 class="font-headline text-xl mb-2">Free to use</h3>
+        <p class="text-on-surface-variant">Free for customers, always. Free for cafes during our launch period. We believe in earning trust first.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Why Bali -->
+<section class="py-24 px-6 md:px-8">
+<div class="max-w-4xl mx-auto">
+  <span class="text-secondary font-label text-xs uppercase tracking-[0.2em] font-bold block mb-4">Why Bali?</span>
+  <h2 class="font-headline text-4xl md:text-5xl mb-12">The perfect place to start.</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="bg-surface-container-lowest p-8 rounded-[2rem] editorial-shadow text-center">
+      <p class="font-headline text-5xl text-primary mb-2">2,000+</p>
+      <p class="text-on-surface-variant">cafes across Bali</p>
+    </div>
+    <div class="bg-surface-container-lowest p-8 rounded-[2rem] editorial-shadow text-center">
+      <p class="font-headline text-5xl text-secondary mb-2">90%</p>
+      <p class="text-on-surface-variant">are independent, not chains</p>
+    </div>
+    <div class="bg-surface-container-lowest p-8 rounded-[2rem] editorial-shadow text-center">
+      <p class="font-headline text-5xl text-primary mb-2">1M+</p>
+      <p class="text-on-surface-variant">digital nomads visit yearly</p>
+    </div>
+  </div>
+  <p class="text-on-surface-variant text-lg leading-relaxed mt-12 max-w-2xl">
+    Bali's cafe culture is unique. It's a mix of locals, expats, digital nomads, and tourists — all passionate about their daily coffee. But most cafes still rely on paper stamp cards or nothing at all. That's the gap Taplo fills.
+  </p>
+</div>
+</section>
+
+<!-- Values -->
+<section class="py-24 bg-primary px-6 md:px-8 relative overflow-hidden">
+<div class="max-w-4xl mx-auto relative z-10">
+  <h2 class="font-headline text-4xl md:text-5xl text-on-primary-container mb-12 text-center">What we believe</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="bg-surface/10 backdrop-blur-sm p-8 rounded-[2rem]">
+      <h3 class="font-headline text-2xl text-on-primary-container mb-3">Simplicity wins</h3>
+      <p class="text-on-primary-container/80">No app to download. No account to create. If it takes more than 3 seconds, we've failed.</p>
+    </div>
+    <div class="bg-surface/10 backdrop-blur-sm p-8 rounded-[2rem]">
+      <h3 class="font-headline text-2xl text-on-primary-container mb-3">Local first</h3>
+      <p class="text-on-primary-container/80">We build for Bali's cafes, not Silicon Valley's metrics. What works here matters more than what scales there.</p>
+    </div>
+    <div class="bg-surface/10 backdrop-blur-sm p-8 rounded-[2rem]">
+      <h3 class="font-headline text-2xl text-on-primary-container mb-3">Privacy by design</h3>
+      <p class="text-on-primary-container/80">We collect the minimum data needed. Your coffee habits are yours. We never sell data to third parties.</p>
+    </div>
+    <div class="bg-surface/10 backdrop-blur-sm p-8 rounded-[2rem]">
+      <h3 class="font-headline text-2xl text-on-primary-container mb-3">Earn trust, then revenue</h3>
+      <p class="text-on-primary-container/80">We're free during launch because we want to prove value before asking for anything. That's the Bali way.</p>
+    </div>
+  </div>
+</div>
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="aboutNoise"><feTurbulence baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/></filter><rect filter="url(#aboutNoise)" height="100%" width="100%"/></svg>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6 md:px-8">
+<div class="max-w-3xl mx-auto text-center">
+  <h2 class="font-headline text-4xl mb-6">Want to be part of it?</h2>
+  <p class="text-on-surface-variant text-lg mb-10">Whether you're a coffee drinker or a cafe owner, we'd love to have you.</p>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a class="bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold shadow-xl shadow-primary/10 transition-all hover:translate-y-[-2px] flex items-center gap-3 justify-center" href="/#get-pass">
+      Get Your Free Pass
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+    <a class="bg-surface-container-high text-on-surface px-10 py-5 rounded-full text-lg font-bold transition-all hover:translate-y-[-2px] flex items-center gap-3 justify-center" href="/cafes">
+      I own a cafe
+      <span class="material-symbols-outlined">storefront</span>
+    </a>
+  </div>
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full border-t border-[#1B6B4A]/10">
+<div class="max-w-7xl mx-auto py-16 px-6 md:px-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div class="md:col-span-2">
+      <a class="font-headline text-2xl italic text-[#1A1A2E] block mb-4" href="/">Taplo</a>
+      <p class="text-on-surface-variant max-w-sm mb-6">Simple digital loyalty for Bali's independent cafes. Scan, earn stamps, get free coffee.</p>
+    </div>
+    <div>
+      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">Explore</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/#how-it-works">How It Works</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/venues">Venues</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/#get-pass">Get Your Pass</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">Company</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-secondary font-semibold hover:text-[#1B6B4A] transition-colors" href="/cafes">For Cafes</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/about">About</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/help">Help Center</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/legal">Legal & Trust</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-12 pt-8 border-t border-[#1B6B4A]/5 flex flex-col md:flex-row justify-between items-center gap-4">
+    <span class="text-sm text-on-surface-variant/50">&copy; 2026 Taplo. Crafted in Bali.</span>
+    <div class="flex items-center gap-6">
+      <a class="text-on-surface-variant/50 hover:text-[#1B6B4A] transition-colors flex items-center gap-1.5 text-sm" href="https://instagram.com/taplo.bali" target="_blank">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @taplo.bali
+      </a>
+      <span class="text-sm text-on-surface-variant/50">hello@taplo.org</span>
+    </div>
+  </div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('main > section, main > section > div > div').forEach(el => el.classList.add('fade-up'));
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+});
+</script>
+</body>
+</html>
