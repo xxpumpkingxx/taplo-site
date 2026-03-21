@@ -4,32 +4,20 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-<title>Taplo for Cafes | Digital Loyalty That Just Works</title>
+<title>Taplo for Cafes | Turn First-Timers Into Regulars</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
-  body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #fdf9f3;
-    color: #1A1A2E;
-  }
-  .font-serif {
-    font-family: 'DM Serif Display', serif;
-  }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdf9f3; color: #1A1A2E; }
+  .font-serif { font-family: 'DM Serif Display', serif; }
   .grain-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.03;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 9999; opacity: 0.03;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    vertical-align: middle;
-  }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .editorial-shadow { box-shadow: 0 32px 64px -12px rgba(26, 26, 46, 0.08); }
 </style>
 <script>
   tailwind.config = {
@@ -37,58 +25,31 @@
     theme: {
       extend: {
         colors: {
-          "tertiary-container": "#5d5c73",
-          "on-secondary": "#ffffff",
-          "secondary": "#ab3500",
-          "surface-container-high": "#ebe8e2",
-          "surface-container-highest": "#e6e2dc",
-          "error-container": "#ffdad6",
-          "surface-container": "#f1ede7",
-          "outline": "#6f7a72",
-          "on-primary-fixed": "#002113",
-          "on-background": "#1c1c18",
-          "surface-container-low": "#f7f3ed",
-          "primary-fixed": "#a6f3c9",
-          "on-surface-variant": "#3f4943",
-          "primary-container": "#1b6b4a",
-          "tertiary-fixed": "#e2e0fc",
-          "secondary-container": "#fe6a34",
-          "on-tertiary": "#ffffff",
-          "on-error-container": "#93000a",
-          "on-surface": "#1c1c18",
-          "surface-container-lowest": "#ffffff",
-          "surface": "#fdf9f3",
-          "surface-bright": "#fdf9f3",
-          "outline-variant": "#bfc9c0",
-          "on-secondary-container": "#5d1900",
-          "surface-tint": "#1b6b4a",
-          "primary": "#005235",
-          "inverse-primary": "#8ad6ae",
-          "on-error": "#ffffff",
-          "on-secondary-fixed-variant": "#832600",
-          "on-tertiary-fixed": "#1a1a2e",
-          "on-primary": "#ffffff",
-          "inverse-surface": "#31302d",
-          "secondary-fixed-dim": "#ffb59d",
-          "inverse-on-surface": "#f4f0ea",
-          "surface-variant": "#e6e2dc",
-          "on-tertiary-container": "#d8d6f1",
-          "error": "#ba1a1a",
-          "primary-fixed-dim": "#8ad6ae",
-          "surface-dim": "#ddd9d4",
-          "tertiary": "#45455b",
-          "on-tertiary-fixed-variant": "#45455b",
-          "on-primary-fixed-variant": "#005235",
-          "secondary-fixed": "#ffdbd0",
-          "background": "#fdf9f3",
-          "on-primary-container": "#9ce9bf",
-          "on-secondary-fixed": "#390c00",
-          "tertiary-fixed-dim": "#c6c4df"
+          "tertiary-container": "#5d5c73", "on-secondary": "#ffffff", "secondary": "#ab3500",
+          "surface-container-high": "#ebe8e2", "surface-container-highest": "#e6e2dc",
+          "error-container": "#ffdad6", "surface-container": "#f1ede7", "outline": "#6f7a72",
+          "on-primary-fixed": "#002113", "on-background": "#1c1c18",
+          "surface-container-low": "#f7f3ed", "primary-fixed": "#a6f3c9",
+          "on-surface-variant": "#3f4943", "primary-container": "#1b6b4a",
+          "tertiary-fixed": "#e2e0fc", "secondary-container": "#fe6a34",
+          "on-tertiary": "#ffffff", "on-error-container": "#93000a", "on-surface": "#1c1c18",
+          "surface-container-lowest": "#ffffff", "surface": "#fdf9f3", "surface-bright": "#fdf9f3",
+          "outline-variant": "#bfc9c0", "on-secondary-container": "#5d1900",
+          "surface-tint": "#1b6b4a", "primary": "#005235", "inverse-primary": "#8ad6ae",
+          "on-error": "#ffffff", "on-secondary-fixed-variant": "#832600",
+          "on-tertiary-fixed": "#1a1a2e", "on-primary": "#ffffff", "inverse-surface": "#31302d",
+          "secondary-fixed-dim": "#ffb59d", "inverse-on-surface": "#f4f0ea",
+          "surface-variant": "#e6e2dc", "on-tertiary-container": "#d8d6f1",
+          "error": "#ba1a1a", "primary-fixed-dim": "#8ad6ae", "surface-dim": "#ddd9d4",
+          "tertiary": "#45455b", "on-tertiary-fixed-variant": "#45455b",
+          "on-primary-fixed-variant": "#005235", "secondary-fixed": "#ffdbd0",
+          "background": "#fdf9f3", "on-primary-container": "#9ce9bf",
+          "on-secondary-fixed": "#390c00", "tertiary-fixed-dim": "#c6c4df"
         },
         fontFamily: {
-          "headline": ["DM Serif Display"],
-          "body": ["Plus Jakarta Sans"],
-          "label": ["Plus Jakarta Sans"]
+          "headline": ["DM Serif Display", "serif"],
+          "body": ["Plus Jakarta Sans", "sans-serif"],
+          "label": ["Plus Jakarta Sans", "sans-serif"]
         },
         borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
       },
@@ -96,243 +57,336 @@
   }
 </script>
 </head>
-<body class="bg-surface text-on-surface">
+<body class="bg-surface text-on-surface overflow-x-hidden">
 <div class="grain-overlay"></div>
 
 <!-- Navigation -->
-<header class="fixed top-0 w-full z-50 bg-[#fdf9f3]/80 backdrop-blur-lg">
-<nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-  <a href="/" class="flex items-center gap-2">
-    <span class="material-symbols-outlined text-[#1B6B4A] text-2xl">touch_app</span>
-    <span class="text-2xl font-serif font-bold text-[#1B6B4A]">Taplo</span>
-  </a>
-  <div class="hidden md:flex items-center gap-8">
-    <a class="text-[#1A1A2E]/70 hover:text-[#1B6B4A] font-medium transition-colors" href="#benefits">Benefits</a>
-    <a class="text-[#1A1A2E]/70 hover:text-[#1B6B4A] font-medium transition-colors" href="#dashboard">Dashboard</a>
-    <a class="text-[#1A1A2E]/70 hover:text-[#1B6B4A] font-medium transition-colors" href="#contact">Contact</a>
-    <a class="text-[#1A1A2E]/70 hover:text-[#1B6B4A] font-medium transition-colors flex items-center gap-1" href="/">
-      <span class="material-symbols-outlined text-base">arrow_back</span> For Customers
-    </a>
+<nav class="fixed top-0 w-full z-50 bg-[#fdf9f3]/80 backdrop-blur-lg shadow-[0_20px_40px_rgba(26,26,46,0.04)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-5">
+  <a class="font-headline text-2xl italic text-[#1A1A2E]" href="/">Taplo</a>
+  <div class="hidden md:flex items-center gap-10 text-sm tracking-tight font-medium">
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/">Experience</a>
+    <a class="text-[#1B6B4A] font-bold border-b-2 border-[#1B6B4A] pb-1" href="/cafes.html">For Cafes</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/#venues">Venues</a>
   </div>
-  <button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-    <span class="material-symbols-outlined text-on-surface">menu</span>
-  </button>
-</nav>
-<div id="mobile-menu" class="hidden md:hidden px-6 pb-6 space-y-4 bg-[#fdf9f3]/95 backdrop-blur-lg">
-  <a class="block text-[#1A1A2E]/70 font-medium" href="#benefits">Benefits</a>
-  <a class="block text-[#1A1A2E]/70 font-medium" href="#dashboard">Dashboard</a>
-  <a class="block text-[#1A1A2E]/70 font-medium" href="#contact">Contact</a>
-  <a class="block text-[#1A1A2E]/70 font-medium" href="/">For Customers</a>
+  <div class="flex items-center gap-4">
+    <a class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-sm font-semibold active:scale-95 transition-all hidden md:inline-block" href="#contact">Start for Free</a>
+    <button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="material-symbols-outlined text-on-surface">menu</span>
+    </button>
+  </div>
 </div>
-</header>
+<div id="mobile-menu" class="hidden md:hidden px-6 pb-6 space-y-4 bg-[#fdf9f3]/95 backdrop-blur-lg">
+  <a class="block text-[#1A1A2E]/70 font-medium" href="/">Home</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="#benefits">Benefits</a>
+  <a class="block text-[#1A1A2E]/70 font-medium" href="#how-it-works">How It Works</a>
+  <a href="#contact" class="block bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-center">Start for Free</a>
+</div>
+</nav>
 
 <main>
-<!-- Hero -->
-<section class="relative pt-40 pb-24 px-6 min-h-[80vh] flex items-center">
-<div class="max-w-4xl mx-auto text-center">
-  <span class="inline-block bg-secondary-fixed text-on-secondary-fixed px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6">For Cafe Owners</span>
-  <h1 class="text-5xl md:text-7xl font-serif text-[#1A1A2E] leading-[1.1] mb-8 tracking-tight">Turn first-timers into regulars.</h1>
-  <p class="text-xl md:text-2xl text-on-surface-variant font-body mb-10 leading-relaxed max-w-2xl mx-auto">
-    Digital loyalty that works from day one. No hardware, no app downloads for your customers, no complicated setup. Just more repeat visits.
-  </p>
-  <a href="#contact" class="inline-flex items-center gap-3 bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all">
-    Get Started
-    <span class="material-symbols-outlined">arrow_forward</span>
-  </a>
+<!-- Hero Section with Dashboard Mockup -->
+<section class="relative pt-44 pb-24 px-6 md:px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+  <div class="z-10">
+    <span class="text-secondary font-label text-xs tracking-[0.2em] uppercase font-bold mb-6 block">For Cafe Owners</span>
+    <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl text-on-surface leading-[1.05] tracking-tight mb-8">
+      Turn first-timers into <span class="text-primary italic">lifelong regulars.</span>
+    </h1>
+    <p class="text-xl text-on-surface-variant max-w-lg mb-12 leading-relaxed">
+      A simple loyalty system built for Bali's independent cafes. Your customers earn stamps in Apple Wallet. You get a dashboard to see who comes back.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="#contact" class="bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold shadow-xl shadow-primary/10 hover:translate-y-[-2px] transition-all text-center">Start for Free</a>
+      <a href="#dashboard" class="bg-surface-container-high text-primary px-10 py-5 rounded-full text-lg font-bold hover:bg-surface-container-highest transition-all text-center">See the Dashboard</a>
+    </div>
+  </div>
+  <div class="relative">
+    <div class="absolute -top-20 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-[120px]"></div>
+    <!-- Dashboard Mockup -->
+    <div class="relative bg-surface-container-low border border-outline-variant/15 rounded-[2rem] p-6 editorial-shadow">
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex space-x-2">
+          <div class="w-3 h-3 rounded-full bg-secondary/40"></div>
+          <div class="w-3 h-3 rounded-full bg-[#e6b800]/40"></div>
+          <div class="w-3 h-3 rounded-full bg-primary/40"></div>
+        </div>
+        <div class="text-xs text-on-surface-variant font-label tracking-widest">TAPLO DASHBOARD</div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <div class="bg-surface-container-lowest p-5 rounded-2xl">
+          <span class="text-on-surface-variant text-xs font-label block mb-1 uppercase tracking-widest">Repeat Visit Rate</span>
+          <span class="text-3xl font-headline font-bold text-primary">68%</span>
+          <div class="mt-4 h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+            <div class="bg-primary h-full w-[68%]"></div>
+          </div>
+        </div>
+        <div class="bg-surface-container-lowest p-5 rounded-2xl">
+          <span class="text-on-surface-variant text-xs font-label block mb-1 uppercase tracking-widest">Avg Visits / Member</span>
+          <span class="text-3xl font-headline font-bold text-secondary">2.8x</span>
+          <span class="text-[10px] text-on-surface-variant block mt-1">Per month</span>
+        </div>
+      </div>
+      <div class="bg-surface-container-lowest p-6 rounded-2xl">
+        <div class="flex justify-between items-end mb-6">
+          <div>
+            <h4 class="font-bold text-on-surface">Weekly Stamps</h4>
+            <p class="text-[10px] text-on-surface-variant">Last 7 days</p>
+          </div>
+          <span class="material-symbols-outlined text-primary">monitoring</span>
+        </div>
+        <div class="flex items-end space-x-2 h-32">
+          <div class="bg-primary/15 w-full rounded-t-lg h-[40%]"></div>
+          <div class="bg-primary/25 w-full rounded-t-lg h-[60%]"></div>
+          <div class="bg-primary/20 w-full rounded-t-lg h-[55%]"></div>
+          <div class="bg-primary/40 w-full rounded-t-lg h-[85%]"></div>
+          <div class="bg-primary w-full rounded-t-lg h-[100%]"></div>
+          <div class="bg-primary/30 w-full rounded-t-lg h-[50%]"></div>
+          <div class="bg-primary/45 w-full rounded-t-lg h-[70%]"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 
-<!-- Benefits -->
-<section class="py-32 bg-surface-container-low px-6" id="benefits">
-<div class="max-w-7xl mx-auto">
-  <div class="mb-20 text-center">
-    <h2 class="text-5xl font-serif text-on-surface mb-6">Everything you need. Nothing you don't.</h2>
-    <p class="text-xl text-on-surface-variant max-w-2xl mx-auto">Taplo handles the loyalty program so you can focus on making great coffee.</p>
+<!-- Stats Bar -->
+<div class="bg-surface-container-low py-16">
+<div class="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+  <div class="text-center">
+    <p class="text-4xl font-headline font-bold text-primary mb-2">3 sec</p>
+    <p class="text-sm text-on-surface-variant font-label uppercase tracking-widest">Customer Sign-up</p>
   </div>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <!-- Benefit 1 -->
-    <div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10">
-      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-primary text-3xl">analytics</span>
-      </div>
-      <h3 class="text-xl font-bold mb-3">Real-time analytics</h3>
-      <p class="text-on-surface-variant leading-relaxed">See who's coming back, when your peak hours are, and which rewards drive the most visits. Data you can actually use.</p>
+  <div class="text-center">
+    <p class="text-4xl font-headline font-bold text-primary mb-2">15 min</p>
+    <p class="text-sm text-on-surface-variant font-label uppercase tracking-widest">Setup Time</p>
+  </div>
+  <div class="text-center">
+    <p class="text-4xl font-headline font-bold text-primary mb-2">$0</p>
+    <p class="text-sm text-on-surface-variant font-label uppercase tracking-widest">Hardware Cost</p>
+  </div>
+  <div class="text-center">
+    <p class="text-4xl font-headline font-bold text-primary mb-2">Free</p>
+    <p class="text-sm text-on-surface-variant font-label uppercase tracking-widest">During Launch</p>
+  </div>
+</div>
+</div>
+
+<!-- Benefits Grid -->
+<section class="py-32 px-6 md:px-8 max-w-7xl mx-auto" id="benefits">
+<div class="mb-20">
+  <h2 class="font-headline text-4xl md:text-5xl mb-6">Everything you need.<br/>Nothing you don't.</h2>
+  <p class="text-on-surface-variant text-lg max-w-xl">Focus on making great coffee. We handle the loyalty.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="bg-surface-container-lowest p-10 rounded-[2rem] editorial-shadow group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-primary text-3xl">analytics</span>
     </div>
-    <!-- Benefit 2 -->
-    <div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10">
-      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-primary text-3xl">bolt</span>
-      </div>
-      <h3 class="text-xl font-bold mb-3">Instant onboarding</h3>
-      <p class="text-on-surface-variant leading-relaxed">Customers scan a QR code and they're in. No app download, no sign-up form, no friction. Takes 2 seconds.</p>
+    <h3 class="font-headline text-2xl mb-4">See who comes back</h3>
+    <p class="text-on-surface-variant leading-relaxed">Real-time dashboard showing visit frequency, peak hours, and your most loyal regulars.</p>
+  </div>
+  <div class="bg-surface-container-lowest p-10 rounded-[2rem] editorial-shadow group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-secondary text-3xl">person_add</span>
     </div>
-    <!-- Benefit 3 -->
-    <div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10">
-      <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-secondary text-3xl">notifications_active</span>
-      </div>
-      <h3 class="text-xl font-bold mb-3">Win-back notifications</h3>
-      <p class="text-on-surface-variant leading-relaxed">When a regular hasn't visited in a while, Taplo nudges them with a lock-screen notification. Brings them back without you lifting a finger.</p>
+    <h3 class="font-headline text-2xl mb-4">Instant onboarding</h3>
+    <p class="text-on-surface-variant leading-relaxed">Customers scan a QR and their pass is in Apple Wallet in 3 seconds. No app, no forms.</p>
+  </div>
+  <div class="bg-surface-container-lowest p-10 rounded-[2rem] editorial-shadow group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="w-16 h-16 rounded-2xl bg-primary-container/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-primary-container text-3xl">notifications_active</span>
     </div>
-    <!-- Benefit 4 -->
-    <div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10">
-      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-primary text-3xl">devices</span>
-      </div>
-      <h3 class="text-xl font-bold mb-3">Zero hardware</h3>
-      <p class="text-on-surface-variant leading-relaxed">No tablets, no card readers, no extra devices. Everything runs through a phone or laptop you already have.</p>
+    <h3 class="font-headline text-2xl mb-4">Win-back notifications</h3>
+    <p class="text-on-surface-variant leading-relaxed">Haven't seen a regular in 2 weeks? Send a push notification straight to their lock screen.</p>
+  </div>
+  <div class="bg-surface-container-lowest p-10 rounded-[2rem] editorial-shadow group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-primary text-3xl">devices</span>
     </div>
-    <!-- Benefit 5 -->
-    <div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10">
-      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
-      </div>
-      <h3 class="text-xl font-bold mb-3">More repeat visits</h3>
-      <p class="text-on-surface-variant leading-relaxed">Cafes using Taplo see customers come back more often. A loyalty program that lives in their wallet means they never forget about you.</p>
+    <h3 class="font-headline text-2xl mb-4">Zero hardware</h3>
+    <p class="text-on-surface-variant leading-relaxed">Use your existing phone or tablet to scan customer passes. No POS integration needed.</p>
+  </div>
+  <div class="bg-surface-container-lowest p-10 rounded-[2rem] editorial-shadow group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-secondary text-3xl">trending_up</span>
     </div>
-    <!-- Benefit 6 -->
-    <div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10">
-      <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
-        <span class="material-symbols-outlined text-secondary text-3xl">tune</span>
+    <h3 class="font-headline text-2xl mb-4">More repeat visits</h3>
+    <p class="text-on-surface-variant leading-relaxed">Digital stamps make loyalty visible and rewarding. Give customers a reason to come back.</p>
+  </div>
+  <div class="bg-surface-container-lowest p-10 rounded-[2rem] editorial-shadow group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="w-16 h-16 rounded-2xl bg-primary-container/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-primary-container text-3xl">tune</span>
+    </div>
+    <h3 class="font-headline text-2xl mb-4">You set the rules</h3>
+    <p class="text-on-surface-variant leading-relaxed">Buy 5 get 1 free? Buy 10 get 20% off? You decide. Change it anytime from your dashboard.</p>
+  </div>
+</div>
+</section>
+
+<!-- How It Works for Merchants -->
+<section class="py-32 bg-surface-container-low px-6 md:px-8" id="how-it-works">
+<div class="max-w-7xl mx-auto">
+  <div class="mb-20">
+    <h2 class="font-headline text-4xl md:text-5xl mb-6">Up and running in 15 minutes.</h2>
+    <p class="text-on-surface-variant text-lg">No complex integration. No training required.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="bg-surface-container-lowest p-10 rounded-[2.5rem] editorial-shadow flex flex-col justify-between min-h-[380px] group">
+      <div>
+        <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-primary text-3xl">edit_note</span>
+        </div>
+        <h3 class="font-headline text-2xl mb-4">Sign up</h3>
+        <p class="text-on-surface-variant leading-relaxed">Enter your cafe name, location, and hours. Upload your logo. That's the entire setup.</p>
       </div>
-      <h3 class="text-xl font-bold mb-3">You set the rules</h3>
-      <p class="text-on-surface-variant leading-relaxed">Choose how many stamps for a reward, what the reward is, and when to send notifications. Your cafe, your rules.</p>
+      <div class="text-primary font-headline font-bold flex items-center gap-2 mt-8">01 <div class="h-[2px] w-12 bg-primary"></div></div>
+    </div>
+    <div class="bg-surface-container-lowest p-10 rounded-[2.5rem] editorial-shadow flex flex-col justify-between min-h-[380px] group">
+      <div>
+        <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-secondary text-3xl">loyalty</span>
+        </div>
+        <h3 class="font-headline text-2xl mb-4">Set your rewards</h3>
+        <p class="text-on-surface-variant leading-relaxed">Choose your reward: a free coffee after 5 visits, a free smoothie bowl after 8, or whatever works for you.</p>
+      </div>
+      <div class="text-secondary font-headline font-bold flex items-center gap-2 mt-8">02 <div class="h-[2px] w-12 bg-secondary"></div></div>
+    </div>
+    <div class="bg-surface-container-lowest p-10 rounded-[2.5rem] editorial-shadow flex flex-col justify-between min-h-[380px] group">
+      <div>
+        <div class="w-16 h-16 rounded-2xl bg-primary-container/20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+          <span class="material-symbols-outlined text-primary-container text-3xl">qr_code_scanner</span>
+        </div>
+        <h3 class="font-headline text-2xl mb-4">Start scanning</h3>
+        <p class="text-on-surface-variant leading-relaxed">Put the Taplo QR at your counter. Customers scan to get their pass. You scan their pass to add stamps.</p>
+      </div>
+      <div class="text-primary font-headline font-bold flex items-center gap-2 mt-8">03 <div class="h-[2px] w-12 bg-primary"></div></div>
     </div>
   </div>
 </div>
 </section>
 
 <!-- Dashboard Preview -->
-<section class="py-32 px-6 overflow-hidden" id="dashboard">
-<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-  <div>
-    <span class="text-secondary font-bold tracking-widest uppercase text-sm mb-4 block">Your Dashboard</span>
-    <h2 class="text-5xl font-serif mb-8 leading-tight">See what's working at a glance.</h2>
-    <p class="text-xl text-on-surface-variant mb-8 leading-relaxed">Track stamps, redemptions, and new members in real time. Spot trends, identify your VIPs, and fine-tune your rewards without guessing.</p>
-    <div class="space-y-4">
-      <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-primary">check_circle</span>
-        <span class="text-on-surface">Daily and weekly performance summaries</span>
+<section class="py-32 px-6 md:px-8 max-w-7xl mx-auto" id="dashboard">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+  <div class="bg-surface-container-high rounded-3xl p-8 lg:p-12 editorial-shadow relative overflow-hidden group">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-bl-[100%] transition-all group-hover:w-72 group-hover:h-72"></div>
+    <div class="bg-surface-container-lowest rounded-xl p-6 shadow-lg border border-outline-variant/10 flex flex-col gap-6">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary text-sm">insights</span>
+          </div>
+          <span class="font-semibold text-sm">Your Dashboard</span>
+        </div>
+        <div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Live</div>
       </div>
-      <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-primary">check_circle</span>
-        <span class="text-on-surface">Customer visit frequency and patterns</span>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="p-4 bg-surface rounded-lg">
+          <span class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold block mb-1">Total Stamps</span>
+          <span class="text-xl font-headline">1,429</span>
+        </div>
+        <div class="p-4 bg-surface rounded-lg">
+          <span class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold block mb-1">Members</span>
+          <span class="text-xl font-headline">312</span>
+        </div>
+        <div class="p-4 bg-surface rounded-lg">
+          <span class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold block mb-1">Redeemed</span>
+          <span class="text-xl font-headline">84</span>
+        </div>
       </div>
-      <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-primary">check_circle</span>
-        <span class="text-on-surface">Redemption tracking and reward ROI</span>
+      <div class="h-36 w-full flex items-end justify-between gap-2 px-2 pb-2">
+        <div class="w-full bg-primary/15 h-[40%] rounded-t-sm"></div>
+        <div class="w-full bg-primary/25 h-[60%] rounded-t-sm"></div>
+        <div class="w-full bg-primary/20 h-[50%] rounded-t-sm"></div>
+        <div class="w-full bg-primary/50 h-[90%] rounded-t-sm"></div>
+        <div class="w-full bg-primary/20 h-[30%] rounded-t-sm"></div>
+        <div class="w-full bg-primary/35 h-[70%] rounded-t-sm"></div>
       </div>
     </div>
   </div>
-  <!-- Dashboard Mockup -->
-  <div class="relative">
-    <div class="bg-surface-container-highest rounded-3xl p-2 shadow-2xl border border-outline-variant/20">
-      <div class="bg-surface rounded-2xl p-8">
-        <!-- Header -->
-        <div class="flex items-center justify-between mb-8">
-          <div>
-            <p class="font-bold text-lg">Good morning, Kopi Desa</p>
-            <p class="text-sm text-on-surface-variant">Here's your week so far</p>
-          </div>
-          <div class="flex gap-2">
-            <div class="w-3 h-3 rounded-full bg-primary/20"></div>
-            <div class="w-3 h-3 rounded-full bg-primary/40"></div>
-            <div class="w-3 h-3 rounded-full bg-primary"></div>
-          </div>
-        </div>
-        <!-- Stats Row -->
-        <div class="grid grid-cols-3 gap-4 mb-8">
-          <div class="p-4 bg-surface-container-low rounded-xl">
-            <p class="text-xs text-on-surface-variant">Total Stamps</p>
-            <p class="text-2xl font-bold">1,429</p>
-            <p class="text-xs text-primary font-medium mt-1">+18% vs last week</p>
-          </div>
-          <div class="p-4 bg-surface-container-low rounded-xl">
-            <p class="text-xs text-on-surface-variant">New Members</p>
-            <p class="text-2xl font-bold">47</p>
-            <p class="text-xs text-primary font-medium mt-1">+12% vs last week</p>
-          </div>
-          <div class="p-4 bg-surface-container-low rounded-xl">
-            <p class="text-xs text-on-surface-variant">Redeemed</p>
-            <p class="text-2xl font-bold">84</p>
-            <p class="text-xs text-secondary font-medium mt-1">23 this week</p>
-          </div>
-        </div>
-        <!-- Bar Chart -->
+  <div class="flex flex-col gap-8">
+    <h2 class="font-headline text-5xl leading-tight">Know your<br/><span class="italic text-primary">customers.</span></h2>
+    <p class="text-on-surface-variant text-lg">See who's coming back, when they visit, and what makes them stay. No guessing, no spreadsheets.</p>
+    <ul class="flex flex-col gap-6">
+      <li class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
         <div>
-          <p class="text-sm font-medium text-on-surface-variant mb-4">Daily stamps this week</p>
-          <div class="flex items-end gap-3 h-32">
-            <div class="w-full flex flex-col items-center gap-1">
-              <div class="w-full bg-primary-container h-16 rounded-t-lg"></div>
-              <span class="text-xs text-on-surface-variant">Mon</span>
-            </div>
-            <div class="w-full flex flex-col items-center gap-1">
-              <div class="w-full bg-primary h-24 rounded-t-lg"></div>
-              <span class="text-xs text-on-surface-variant">Tue</span>
-            </div>
-            <div class="w-full flex flex-col items-center gap-1">
-              <div class="w-full bg-primary-container h-12 rounded-t-lg"></div>
-              <span class="text-xs text-on-surface-variant">Wed</span>
-            </div>
-            <div class="w-full flex flex-col items-center gap-1">
-              <div class="w-full bg-primary-container h-20 rounded-t-lg"></div>
-              <span class="text-xs text-on-surface-variant">Thu</span>
-            </div>
-            <div class="w-full flex flex-col items-center gap-1">
-              <div class="w-full bg-primary h-28 rounded-t-lg"></div>
-              <span class="text-xs text-on-surface-variant">Fri</span>
-            </div>
-            <div class="w-full flex flex-col items-center gap-1">
-              <div class="w-full bg-primary h-32 rounded-t-lg"></div>
-              <span class="text-xs text-on-surface-variant">Sat</span>
-            </div>
-            <div class="w-full flex flex-col items-center gap-1">
-              <div class="w-full bg-primary-container h-20 rounded-t-lg"></div>
-              <span class="text-xs text-on-surface-variant">Sun</span>
-            </div>
-          </div>
+          <h4 class="font-bold">Visit frequency & peak hours</h4>
+          <p class="text-sm text-on-surface-variant">See when your regulars come in and plan staff accordingly.</p>
         </div>
-      </div>
-    </div>
+      </li>
+      <li class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+        <div>
+          <h4 class="font-bold">Retention rate tracking</h4>
+          <p class="text-sm text-on-surface-variant">Know exactly how many first-timers become repeat visitors.</p>
+        </div>
+      </li>
+      <li class="flex items-start gap-4">
+        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+        <div>
+          <h4 class="font-bold">Reward redemption insights</h4>
+          <p class="text-sm text-on-surface-variant">Track which rewards drive the most return visits.</p>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
 </section>
 
-<!-- Contact Section -->
-<section class="py-32 px-6" id="contact">
-<div class="max-w-4xl mx-auto bg-surface-container-highest rounded-[3rem] p-16 text-center relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+<!-- Contact / CTA Section -->
+<section class="py-32 px-6 md:px-8" id="contact">
+<div class="max-w-4xl mx-auto text-center bg-primary rounded-[3rem] py-24 px-12 relative overflow-hidden">
   <div class="relative z-10">
-    <h2 class="text-5xl font-serif mb-6">Let's get your cafe on Taplo.</h2>
-    <p class="text-xl text-on-surface-variant mb-12 max-w-xl mx-auto">We'll set you up in a single conversation. No contracts, no commitments to start. Just reach out and we'll take it from there.</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://wa.me/6281234567890" target="_blank" class="bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all flex items-center justify-center gap-3">
-        <span class="material-symbols-outlined">chat</span>
-        WhatsApp Us
+    <h2 class="font-headline text-5xl md:text-6xl text-on-primary-container mb-8">Ready to bring customers back?</h2>
+    <p class="text-on-primary-container/80 text-xl mb-12 max-w-xl mx-auto">Start for free during our launch period. No credit card, no commitment. Set up in 15 minutes.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="https://wa.me/6281234567890?text=Hi!%20I%27m%20interested%20in%20Taplo%20for%20my%20cafe." class="bg-surface text-primary px-10 py-5 rounded-full text-lg font-bold shadow-xl hover:scale-105 transition-transform flex items-center gap-3 mx-auto sm:mx-0" target="_blank" rel="noopener">
+        <span class="material-symbols-outlined text-2xl">chat</span>
+        Chat on WhatsApp
       </a>
-      <a href="mailto:hello@taplo.co" class="bg-surface-container-lowest text-on-surface px-10 py-5 rounded-full text-lg font-bold hover:bg-white transition-all flex items-center justify-center gap-3 border border-outline-variant/20">
-        <span class="material-symbols-outlined">mail</span>
-        hello@taplo.co
+      <a href="mailto:hello@taplo.org?subject=Interested%20in%20Taplo%20for%20my%20cafe" class="bg-surface/20 text-on-primary-container px-10 py-5 rounded-full text-lg font-bold hover:bg-surface/30 transition-colors backdrop-blur-md flex items-center gap-3 mx-auto sm:mx-0">
+        <span class="material-symbols-outlined text-2xl">mail</span>
+        Email Us
       </a>
     </div>
   </div>
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="ctaNoise"><feTurbulence baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/></filter><rect filter="url(#ctaNoise)" height="100%" width="100%"/></svg>
+  </div>
+  <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
 </div>
 </section>
 </main>
 
 <!-- Footer -->
 <footer class="w-full border-t border-[#1B6B4A]/10">
-<div class="max-w-7xl mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-  <div class="flex items-center gap-2">
-    <span class="material-symbols-outlined text-[#1B6B4A] text-xl">touch_app</span>
-    <span class="text-lg font-serif font-bold text-[#1B6B4A]">Taplo</span>
-    <span class="text-sm text-[#1A1A2E]/60 ml-2">&copy; 2026 Taplo</span>
+<div class="max-w-7xl mx-auto py-16 px-6 md:px-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div class="md:col-span-2">
+      <a class="font-headline text-2xl italic text-[#1A1A2E] block mb-4" href="/">Taplo</a>
+      <p class="text-on-surface-variant max-w-sm mb-6">Simple digital loyalty for Bali's independent cafes. Free to start, easy to run.</p>
+    </div>
+    <div>
+      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">Quick Links</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/">Consumer Site</a></li>
+        <li><a class="text-secondary font-semibold hover:text-[#1B6B4A] transition-colors" href="/cafes.html">For Cafes</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="/#venues">Venues</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">Legal</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="#">Privacy Policy</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="#">Terms of Service</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="flex gap-8">
-    <a class="text-sm text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-all" href="/">For Customers</a>
-    <a class="text-sm text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-all" href="#benefits">Benefits</a>
-    <a class="text-sm text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-all" href="#contact">Contact</a>
-    <a class="text-sm text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-all" href="#">Privacy</a>
+  <div class="mt-12 pt-8 border-t border-[#1B6B4A]/5 flex flex-col md:flex-row justify-between items-center gap-4">
+    <span class="text-sm text-on-surface-variant/50">&copy; 2026 Taplo. Crafted in Bali.</span>
+    <span class="text-sm text-on-surface-variant/50">hello@taplo.org</span>
   </div>
 </div>
 </footer>

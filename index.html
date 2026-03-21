@@ -6,30 +6,19 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <title>Taplo | Never Lose a Free Coffee Again</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
-  body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #fdf9f3;
-    color: #1A1A2E;
-  }
-  .font-serif {
-    font-family: 'DM Serif Display', serif;
-  }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdf9f3; color: #1A1A2E; }
+  .font-serif { font-family: 'DM Serif Display', serif; }
   .grain-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.03;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 9999; opacity: 0.03;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    vertical-align: middle;
-  }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .editorial-shadow { box-shadow: 0 32px 64px -12px rgba(26, 26, 46, 0.08); }
+  .text-inked { letter-spacing: -0.02em; }
 </style>
 <script>
   tailwind.config = {
@@ -37,58 +26,31 @@
     theme: {
       extend: {
         colors: {
-          "tertiary-container": "#5d5c73",
-          "on-secondary": "#ffffff",
-          "secondary": "#ab3500",
-          "surface-container-high": "#ebe8e2",
-          "surface-container-highest": "#e6e2dc",
-          "error-container": "#ffdad6",
-          "surface-container": "#f1ede7",
-          "outline": "#6f7a72",
-          "on-primary-fixed": "#002113",
-          "on-background": "#1c1c18",
-          "surface-container-low": "#f7f3ed",
-          "primary-fixed": "#a6f3c9",
-          "on-surface-variant": "#3f4943",
-          "primary-container": "#1b6b4a",
-          "tertiary-fixed": "#e2e0fc",
-          "secondary-container": "#fe6a34",
-          "on-tertiary": "#ffffff",
-          "on-error-container": "#93000a",
-          "on-surface": "#1c1c18",
-          "surface-container-lowest": "#ffffff",
-          "surface": "#fdf9f3",
-          "surface-bright": "#fdf9f3",
-          "outline-variant": "#bfc9c0",
-          "on-secondary-container": "#5d1900",
-          "surface-tint": "#1b6b4a",
-          "primary": "#005235",
-          "inverse-primary": "#8ad6ae",
-          "on-error": "#ffffff",
-          "on-secondary-fixed-variant": "#832600",
-          "on-tertiary-fixed": "#1a1a2e",
-          "on-primary": "#ffffff",
-          "inverse-surface": "#31302d",
-          "secondary-fixed-dim": "#ffb59d",
-          "inverse-on-surface": "#f4f0ea",
-          "surface-variant": "#e6e2dc",
-          "on-tertiary-container": "#d8d6f1",
-          "error": "#ba1a1a",
-          "primary-fixed-dim": "#8ad6ae",
-          "surface-dim": "#ddd9d4",
-          "tertiary": "#45455b",
-          "on-tertiary-fixed-variant": "#45455b",
-          "on-primary-fixed-variant": "#005235",
-          "secondary-fixed": "#ffdbd0",
-          "background": "#fdf9f3",
-          "on-primary-container": "#9ce9bf",
-          "on-secondary-fixed": "#390c00",
-          "tertiary-fixed-dim": "#c6c4df"
+          "tertiary-container": "#5d5c73", "on-secondary": "#ffffff", "secondary": "#ab3500",
+          "surface-container-high": "#ebe8e2", "surface-container-highest": "#e6e2dc",
+          "error-container": "#ffdad6", "surface-container": "#f1ede7", "outline": "#6f7a72",
+          "on-primary-fixed": "#002113", "on-background": "#1c1c18",
+          "surface-container-low": "#f7f3ed", "primary-fixed": "#a6f3c9",
+          "on-surface-variant": "#3f4943", "primary-container": "#1b6b4a",
+          "tertiary-fixed": "#e2e0fc", "secondary-container": "#fe6a34",
+          "on-tertiary": "#ffffff", "on-error-container": "#93000a", "on-surface": "#1c1c18",
+          "surface-container-lowest": "#ffffff", "surface": "#fdf9f3", "surface-bright": "#fdf9f3",
+          "outline-variant": "#bfc9c0", "on-secondary-container": "#5d1900",
+          "surface-tint": "#1b6b4a", "primary": "#005235", "inverse-primary": "#8ad6ae",
+          "on-error": "#ffffff", "on-secondary-fixed-variant": "#832600",
+          "on-tertiary-fixed": "#1a1a2e", "on-primary": "#ffffff", "inverse-surface": "#31302d",
+          "secondary-fixed-dim": "#ffb59d", "inverse-on-surface": "#f4f0ea",
+          "surface-variant": "#e6e2dc", "on-tertiary-container": "#d8d6f1",
+          "error": "#ba1a1a", "primary-fixed-dim": "#8ad6ae", "surface-dim": "#ddd9d4",
+          "tertiary": "#45455b", "on-tertiary-fixed-variant": "#45455b",
+          "on-primary-fixed-variant": "#005235", "secondary-fixed": "#ffdbd0",
+          "background": "#fdf9f3", "on-primary-container": "#9ce9bf",
+          "on-secondary-fixed": "#390c00", "tertiary-fixed-dim": "#c6c4df"
         },
         fontFamily: {
-          "headline": ["DM Serif Display"],
-          "body": ["Plus Jakarta Sans"],
-          "label": ["Plus Jakarta Sans"]
+          "headline": ["DM Serif Display", "serif"],
+          "body": ["Plus Jakarta Sans", "sans-serif"],
+          "label": ["Plus Jakarta Sans", "sans-serif"]
         },
         borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
       },
@@ -96,127 +58,218 @@
   }
 </script>
 </head>
-<body class="bg-surface text-on-surface">
+<body class="bg-surface text-on-surface overflow-x-hidden">
 <div class="grain-overlay"></div>
 
 <!-- Navigation -->
-<header class="fixed top-0 w-full z-50 bg-[#fdf9f3]/80 backdrop-blur-lg">
-<nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-  <div class="flex items-center gap-2">
-    <span class="material-symbols-outlined text-[#1B6B4A] text-2xl">touch_app</span>
-    <span class="text-2xl font-serif font-bold text-[#1B6B4A]">Taplo</span>
+<nav class="fixed top-0 w-full z-50 bg-[#fdf9f3]/80 backdrop-blur-lg shadow-[0_20px_40px_rgba(26,26,46,0.04)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-5">
+  <a class="font-headline text-2xl italic text-[#1A1A2E]" href="/">Taplo</a>
+  <div class="hidden md:flex items-center gap-10 text-sm tracking-tight font-medium">
+    <a class="text-[#1B6B4A] font-bold border-b-2 border-[#1B6B4A] pb-1" href="/">Experience</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/cafes.html">For Cafes</a>
+    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="#venues">Venues</a>
   </div>
-  <div class="hidden md:flex items-center gap-8">
-    <a class="text-[#1A1A2E]/70 hover:text-[#1B6B4A] font-medium transition-colors" href="#how-it-works">How It Works</a>
-    <a class="text-[#1A1A2E]/70 hover:text-[#1B6B4A] font-medium transition-colors" href="#venues">Venues</a>
-    <a class="text-[#1A1A2E]/70 hover:text-[#1B6B4A] font-medium transition-colors flex items-center gap-1" href="/cafes.html">For Cafes <span class="material-symbols-outlined text-base">arrow_forward</span></a>
-    <a href="#get-pass" class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold transition-transform active:scale-95">Get Your Free Pass</a>
+  <div class="flex items-center gap-4">
+    <a class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-sm font-semibold active:scale-95 transition-all hidden md:inline-block" href="#get-pass">Get Your Free Pass</a>
+    <button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <span class="material-symbols-outlined text-on-surface">menu</span>
+    </button>
   </div>
-  <button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-    <span class="material-symbols-outlined text-on-surface">menu</span>
-  </button>
-</nav>
+</div>
 <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 space-y-4 bg-[#fdf9f3]/95 backdrop-blur-lg">
   <a class="block text-[#1A1A2E]/70 font-medium" href="#how-it-works">How It Works</a>
   <a class="block text-[#1A1A2E]/70 font-medium" href="#venues">Venues</a>
   <a class="block text-[#1A1A2E]/70 font-medium" href="/cafes.html">For Cafes</a>
   <a href="#get-pass" class="block bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-center">Get Your Free Pass</a>
 </div>
-</header>
+</nav>
 
 <main>
-<!-- Hero Section -->
-<section class="relative pt-40 pb-24 px-6 min-h-screen flex items-center">
-<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-  <div class="order-2 md:order-1">
-    <span class="inline-block bg-secondary-fixed text-on-secondary-fixed px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6">Now in Canggu</span>
-    <h1 class="text-6xl md:text-8xl font-serif text-[#1A1A2E] leading-[1.1] mb-8 tracking-tight">Never lose a free coffee again.</h1>
-    <p class="text-xl md:text-2xl text-on-surface-variant font-body mb-10 leading-relaxed max-w-xl">
-      One pass in your Apple Wallet. Earn stamps at every partner cafe. No app, no paper cards, no hassle.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 mb-16">
-      <a href="#get-pass" class="bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all flex items-center justify-center gap-3">
-        Get Your Free Pass
-        <span class="material-symbols-outlined">arrow_forward</span>
-      </a>
-    </div>
-    <div class="grid grid-cols-2 gap-8 border-t border-outline-variant/20 pt-10">
-      <div>
-        <p class="text-3xl font-serif text-primary mb-1">No app needed</p>
-        <p class="text-sm text-on-surface-variant">Lives right in your Apple Wallet.</p>
-      </div>
-      <div>
-        <p class="text-3xl font-serif text-primary mb-1">Every partner cafe</p>
-        <p class="text-sm text-on-surface-variant">One pass for all your favorite spots.</p>
-      </div>
+<!-- Hero Section: Asymmetric Editorial Layout -->
+<section class="pt-44 pb-32 px-6 md:px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-7 flex flex-col gap-8">
+  <span class="text-secondary font-label text-sm uppercase tracking-[0.2em] font-bold">Now live in Canggu</span>
+  <h1 class="font-headline text-6xl md:text-7xl lg:text-8xl text-inked text-on-background leading-[0.95]">
+    Never lose a free coffee again.
+  </h1>
+  <p class="text-on-surface-variant text-xl max-w-xl leading-relaxed">
+    One pass in your Apple Wallet. Earn stamps at every partner cafe. No app, no paper cards, no hassle.
+  </p>
+  <div class="flex flex-col sm:flex-row gap-4 items-start pt-2">
+    <a class="bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold shadow-xl shadow-primary/10 transition-all hover:translate-y-[-2px] flex items-center gap-3" href="#get-pass">
+      Get Your Free Pass
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+    <a class="text-primary font-headline italic text-xl flex items-center gap-2 group px-4 py-5" href="#how-it-works">
+      See how it works
+      <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+    </a>
+  </div>
+</div>
+<div class="lg:col-span-5 relative">
+  <div class="relative z-20 transform lg:rotate-6 transition-transform hover:rotate-0 duration-700">
+    <div class="rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5]">
+      <img alt="Warm sunlight in a Canggu cafe" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChS9TnmOlpAH9U1rXHNc6UQ3o8V763tyQ8GNQgb87_-qScg3phe8GyFP2L-GfvnsgP8Jubcd2nUSHRMPYslhvCcG1FUvSKLEvyLST-abW35lI_8G9no41LCGpXRLvjwN7cozrniRqCtTw9XHIEuznem82pdteP3IuB-i3AIec_pIbKWI1toKjLcMlgrPyQn4Yz85B-vUvQJco7pTj14WL_7fQ_6mG1aB30OBSjvz9WCRY8vOhVO2YIcu5GzVLDQS-xF8ua7yg7TQ"/>
     </div>
   </div>
-  <div class="order-1 md:order-2 relative">
-    <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700">
-      <img alt="Cafe environment in Canggu" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChS9TnmOlpAH9U1rXHNc6UQ3o8V763tyQ8GNQgb87_-qScg3phe8GyFP2L-GfvnsgP8Jubcd2nUSHRMPYslhvCcG1FUvSKLEvyLST-abW35lI_8G9no41LCGpXRLvjwN7cozrniRqCtTw9XHIEuznem82pdteP3IuB-i3AIec_pIbKWI1toKjLcMlgrPyQn4Yz85B-vUvQJco7pTj14WL_7fQ_6mG1aB30OBSjvz9WCRY8vOhVO2YIcu5GzVLDQS-xF8ua7yg7TQ"/>
-    </div>
-    <div class="absolute -bottom-10 -left-10 z-20 bg-surface-container-lowest p-8 rounded-3xl shadow-xl max-w-xs border border-surface-container-high">
-      <p class="text-4xl font-serif text-secondary mb-2">100% free.</p>
-      <p class="text-on-surface-variant leading-snug">For you, always. Just tap, scan, and earn your way to free coffee.</p>
-    </div>
+  <!-- Floating stat card -->
+  <div class="absolute -bottom-10 -left-6 z-30 bg-surface-container-lowest p-8 rounded-3xl shadow-xl max-w-xs editorial-shadow">
+    <p class="text-4xl font-serif text-secondary mb-2">100% free.</p>
+    <p class="text-on-surface-variant leading-snug">For you, always. Scan, earn stamps, get free coffee.</p>
   </div>
+  <!-- Background blur accent -->
+  <div class="absolute -top-12 -right-12 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10"></div>
 </div>
 </section>
 
-<!-- How It Works -->
-<section class="py-32 bg-surface-container-low px-6" id="how-it-works">
+<!-- How It Works: iPhone Mockup + Steps -->
+<section class="py-32 bg-surface-container-low px-6 md:px-8 rounded-t-[3rem] md:rounded-t-[5rem]" id="how-it-works">
 <div class="max-w-7xl mx-auto">
-  <div class="mb-20 text-center">
-    <h2 class="text-5xl font-serif text-on-surface mb-6">Free coffee on autopilot.</h2>
-    <p class="text-xl text-on-surface-variant max-w-2xl mx-auto">Three steps. No downloads. No sign-ups. Just coffee.</p>
-  </div>
-  <div class="relative">
-    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant/30 -translate-y-1/2"></div>
-    <div class="grid md:grid-cols-3 gap-12 relative z-10">
-      <!-- Step 1 -->
-      <div class="flex flex-col items-center text-center">
-        <div class="w-20 h-20 bg-primary text-on-primary rounded-full flex items-center justify-center mb-8 shadow-xl shadow-primary/20">
-          <span class="material-symbols-outlined text-4xl">qr_code_scanner</span>
-        </div>
-        <h3 class="text-2xl font-serif mb-4">Scan the QR</h3>
-        <p class="text-on-surface-variant leading-relaxed">See a Taplo QR code at the counter? Scan it with your phone camera. That's it.</p>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+  <!-- iPhone Mockup -->
+  <div class="flex justify-center order-2 lg:order-1">
+    <div class="relative w-72 h-[580px] bg-[#1a1a2e] rounded-[3rem] border-8 border-surface-container-highest editorial-shadow overflow-hidden">
+      <div class="absolute top-0 w-full h-8 flex justify-center items-end pb-1 z-20">
+        <div class="w-24 h-5 bg-[#1a1a2e] rounded-full"></div>
       </div>
-      <!-- Step 2 -->
-      <div class="flex flex-col items-center text-center">
-        <div class="w-20 h-20 bg-primary text-on-primary rounded-full flex items-center justify-center mb-8 shadow-xl shadow-primary/20">
-          <span class="material-symbols-outlined text-4xl">wallet</span>
+      <div class="p-4 h-full flex flex-col pt-12">
+        <div class="bg-[#111125] rounded-xl p-5 flex-grow flex flex-col justify-between relative overflow-hidden">
+          <div class="z-10">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-xs font-bold text-[#8ad6ae]">Taplo Pass</span>
+              <span class="material-symbols-outlined text-white/60 text-lg">contactless</span>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-[#1b6b4a] flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-white">local_cafe</span>
+            </div>
+            <p class="text-white font-headline text-2xl leading-none">Canggu<br/>Coffee Pass</p>
+            <p class="text-white/50 text-xs mt-2">All partner cafes</p>
+          </div>
+          <div class="z-10 mt-auto">
+            <div class="flex justify-between items-end">
+              <div>
+                <p class="text-[10px] uppercase text-white/50 tracking-widest">Stamps</p>
+                <p class="text-2xl font-bold text-[#8ad6ae]">4 / 5</p>
+                <p class="text-[10px] text-white/40 mt-1">1 more = free coffee!</p>
+              </div>
+              <div class="w-10 h-10 border border-white/20 rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-sm">qr_code_2</span>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -top-20 -right-20 w-64 h-64 bg-[#1b6b4a]/20 rounded-full blur-3xl"></div>
         </div>
-        <h3 class="text-2xl font-serif mb-4">Pass saves to Wallet</h3>
-        <p class="text-on-surface-variant leading-relaxed">Your Taplo pass lands in Apple Wallet instantly. No app to download, no account to create.</p>
-      </div>
-      <!-- Step 3 -->
-      <div class="flex flex-col items-center text-center">
-        <div class="w-20 h-20 bg-primary text-on-primary rounded-full flex items-center justify-center mb-8 shadow-xl shadow-primary/20">
-          <span class="material-symbols-outlined text-4xl">coffee</span>
+        <div class="mt-4 flex justify-center">
+          <div class="bg-[#1a1a2e] border border-white/20 text-white px-6 py-3 rounded-full flex items-center space-x-2 text-xs font-bold">
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">wallet</span>
+            <span>Added to Apple Wallet</span>
+          </div>
         </div>
-        <h3 class="text-2xl font-serif mb-4">Free coffee on autopilot</h3>
-        <p class="text-on-surface-variant leading-relaxed">Every visit earns a stamp. Hit 10 and your next coffee is free. Works at every partner cafe.</p>
       </div>
     </div>
+  </div>
+  <!-- Steps -->
+  <div class="order-1 lg:order-2 space-y-12">
+    <div>
+      <span class="font-label text-secondary text-sm tracking-[0.2em] uppercase block mb-4">How It Works</span>
+      <h2 class="font-headline text-5xl md:text-6xl text-on-surface leading-tight">Free coffee<br/><span class="text-primary italic">on autopilot.</span></h2>
+    </div>
+    <div class="space-y-8">
+      <div class="flex items-start space-x-6 group">
+        <div class="w-12 h-12 rounded-full border-2 border-outline-variant flex items-center justify-center text-primary shrink-0 font-headline text-lg group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">1</div>
+        <div>
+          <h4 class="text-lg font-bold mb-2">Scan the QR</h4>
+          <p class="text-on-surface-variant leading-relaxed">See a Taplo QR code at the counter? Scan it with your phone camera. Takes 3 seconds.</p>
+        </div>
+      </div>
+      <div class="flex items-start space-x-6 group">
+        <div class="w-12 h-12 rounded-full border-2 border-outline-variant flex items-center justify-center text-primary shrink-0 font-headline text-lg group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">2</div>
+        <div>
+          <h4 class="text-lg font-bold mb-2">Pass saves to Wallet</h4>
+          <p class="text-on-surface-variant leading-relaxed">Your Taplo pass lands in Apple Wallet instantly. No app to download, no account to create.</p>
+        </div>
+      </div>
+      <div class="flex items-start space-x-6 group">
+        <div class="w-12 h-12 rounded-full border-2 border-outline-variant flex items-center justify-center text-primary shrink-0 font-headline text-lg group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">3</div>
+        <div>
+          <h4 class="text-lg font-bold mb-2">Earn free coffee</h4>
+          <p class="text-on-surface-variant leading-relaxed">Every visit earns a stamp. Hit 5 and your next coffee is free. Works at every partner cafe in Canggu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- Benefits: Bento Grid -->
+<section class="py-32 max-w-7xl mx-auto px-6 md:px-8">
+<div class="mb-16">
+  <h2 class="font-headline text-5xl text-center">Built for your<br/>daily ritual.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <!-- Large: No App -->
+  <div class="md:col-span-2 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between relative overflow-hidden group">
+    <div class="z-10">
+      <span class="material-symbols-outlined text-4xl text-primary mb-6">smartphone</span>
+      <h3 class="font-headline text-3xl mb-4">No app to download</h3>
+      <p class="text-on-surface-variant max-w-md text-lg">Your Taplo pass lives in Apple Wallet. It's always there — even offline at the beach. Just scan and go.</p>
+    </div>
+    <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-700"></div>
+  </div>
+  <!-- Real-time Updates -->
+  <div class="bg-surface-container-high rounded-[2rem] p-10 flex flex-col justify-center text-center">
+    <div class="mb-6 mx-auto w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center">
+      <span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+    </div>
+    <h3 class="font-headline text-2xl mb-4">Lock screen<br/>reminders</h3>
+    <p class="text-on-surface-variant">Your pass appears on your lock screen when you're near a partner cafe. Never forget your stamps.</p>
+  </div>
+  <!-- Every Cafe -->
+  <div class="bg-surface-container-high rounded-[2rem] p-10 flex flex-col justify-center text-center">
+    <div class="mb-6 mx-auto w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+      <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+    </div>
+    <h3 class="font-headline text-2xl mb-4">One pass,<br/>every cafe</h3>
+    <p class="text-on-surface-variant">Works across all partner cafes in Canggu. No more juggling a different card for every spot.</p>
+  </div>
+  <!-- Large: Unified -->
+  <div class="md:col-span-2 bg-primary rounded-[2rem] p-10 flex flex-col md:flex-row items-center gap-10 overflow-hidden relative">
+    <div class="flex-1 z-10">
+      <h3 class="font-headline text-3xl text-on-primary-container mb-4">Beyond the paper card.</h3>
+      <p class="text-on-primary-container/80 text-lg">Paper cards get lost, damaged, forgotten in your hotel. Taplo is the digital upgrade your coffee habit deserves.</p>
+    </div>
+    <div class="flex-shrink-0 z-10">
+      <div class="grid grid-cols-2 gap-3">
+        <div class="w-16 h-16 rounded-lg bg-surface/20 flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container">local_cafe</span></div>
+        <div class="w-16 h-16 rounded-lg bg-surface/20 flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container">brunch_dining</span></div>
+        <div class="w-16 h-16 rounded-lg bg-surface/20 flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container">laptop_mac</span></div>
+        <div class="w-16 h-16 rounded-lg bg-surface/20 flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-container">eco</span></div>
+      </div>
+    </div>
+    <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-primary/20 to-transparent"></div>
   </div>
 </div>
 </section>
 
 <!-- Venues Section -->
-<section class="py-32 px-6" id="venues">
+<section class="py-32 bg-surface-container-low px-6 md:px-8" id="venues">
 <div class="max-w-7xl mx-auto">
-  <div class="mb-20 text-center">
-    <h2 class="text-5xl font-serif text-on-surface mb-6">Your favorite spots, one pass.</h2>
-    <p class="text-xl text-on-surface-variant max-w-2xl mx-auto">Taplo works across all kinds of cafes in Canggu. Here's where you can start earning.</p>
+  <div class="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
+    <div class="max-w-xl">
+      <h2 class="font-headline text-5xl text-inked mb-6">Your favorite spots,<br/>one pass.</h2>
+      <p class="text-on-surface-variant text-lg">Taplo works across all kinds of cafes in Canggu. Here's where you can start earning.</p>
+    </div>
   </div>
   <div class="grid md:grid-cols-3 gap-8">
     <!-- Coffee Shops -->
-    <div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10">
-      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+    <div class="bg-surface-container-lowest p-10 rounded-[2rem] editorial-shadow group hover:translate-y-[-4px] transition-transform duration-500">
+      <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
         <span class="material-symbols-outlined text-primary text-3xl">local_cafe</span>
       </div>
-      <h3 class="text-2xl font-serif mb-3">Coffee Shops</h3>
-      <p class="text-on-surface-variant leading-relaxed mb-6">Your daily flat white, pour-over, or iced latte. Earn stamps at specialty roasters and neighborhood favorites alike.</p>
+      <h3 class="font-headline text-2xl mb-3">Coffee Shops</h3>
+      <p class="text-on-surface-variant leading-relaxed mb-6">Your daily flat white, pour-over, or iced latte. Earn stamps at specialty roasters and neighborhood favorites.</p>
       <div class="flex flex-wrap gap-2">
         <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">Specialty Roasters</span>
         <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">Third Wave</span>
@@ -224,11 +277,11 @@
       </div>
     </div>
     <!-- Brunch Spots -->
-    <div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10">
-      <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
+    <div class="bg-surface-container-lowest p-10 rounded-[2rem] editorial-shadow group hover:translate-y-[-4px] transition-transform duration-500">
+      <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
         <span class="material-symbols-outlined text-secondary text-3xl">brunch_dining</span>
       </div>
-      <h3 class="text-2xl font-serif mb-3">Brunch Spots</h3>
+      <h3 class="font-headline text-2xl mb-3">Brunch Spots</h3>
       <p class="text-on-surface-variant leading-relaxed mb-6">Acai bowls, avocado toast, and a cappuccino. Your brunch coffee counts toward your next freebie too.</p>
       <div class="flex flex-wrap gap-2">
         <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">All-Day Brunch</span>
@@ -237,11 +290,11 @@
       </div>
     </div>
     <!-- Coworking Cafes -->
-    <div class="bg-surface-container-lowest p-10 rounded-[2rem] border border-outline-variant/10">
-      <div class="w-14 h-14 bg-primary-container/20 rounded-2xl flex items-center justify-center mb-6">
+    <div class="bg-surface-container-lowest p-10 rounded-[2rem] editorial-shadow group hover:translate-y-[-4px] transition-transform duration-500">
+      <div class="w-14 h-14 bg-primary-container/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
         <span class="material-symbols-outlined text-primary-container text-3xl">laptop_mac</span>
       </div>
-      <h3 class="text-2xl font-serif mb-3">Coworking Cafes</h3>
+      <h3 class="font-headline text-2xl mb-3">Coworking Cafes</h3>
       <p class="text-on-surface-variant leading-relaxed mb-6">Fast wifi, good coffee, and a stamp every time. The digital nomad's dream loyalty setup.</p>
       <div class="flex flex-wrap gap-2">
         <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">Fast WiFi</span>
@@ -254,46 +307,106 @@
 </section>
 
 <!-- Coming Soon Teaser -->
-<section class="py-24 px-6">
-<div class="max-w-4xl mx-auto bg-surface-container-low rounded-[2rem] p-12 md:p-16 text-center relative overflow-hidden border border-outline-variant/10">
-  <div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent"></div>
-  <div class="relative z-10">
+<section class="py-32 px-6 md:px-8 relative overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row gap-20 items-center">
+  <div class="md:w-1/2">
     <span class="inline-block bg-secondary/10 text-secondary px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6">Coming Soon</span>
-    <h2 class="text-4xl md:text-5xl font-serif mb-6">Send someone a coffee.</h2>
-    <p class="text-xl text-on-surface-variant max-w-xl mx-auto">Gift a free coffee to a friend, a date, or a stranger. Straight to their Apple Wallet. We're building it now.</p>
+    <h2 class="font-headline text-5xl md:text-6xl mb-8 leading-tight">Send someone<br/>a coffee.</h2>
+    <p class="text-on-surface-variant text-xl leading-relaxed mb-8">Gift a free coffee to a friend, a date, or a stranger. Straight to their Apple Wallet. We're building it now.</p>
+    <div class="space-y-6">
+      <div class="border-l-2 border-secondary pl-8">
+        <h4 class="font-bold text-lg mb-1">No awkward Venmo requests</h4>
+        <p class="text-on-surface-variant">Pick a cafe, pick a drink, send it. They redeem it next time they visit.</p>
+      </div>
+      <div class="border-l-2 border-primary pl-8">
+        <h4 class="font-bold text-lg mb-1">Works for anyone</h4>
+        <p class="text-on-surface-variant">They don't even need Taplo yet. The gift creates their pass automatically.</p>
+      </div>
+    </div>
   </div>
+  <div class="md:w-1/2">
+    <div class="bg-surface-container-low rounded-[2rem] p-4 editorial-shadow rotate-3 hover:rotate-0 transition-transform duration-500">
+      <img alt="Friends sharing coffee in Bali" class="w-full h-[400px] object-cover rounded-[1.5rem]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5cHkT3ijOteRx0GHBRfTX74uPDaVS-famo_l84LITFGNWGs8R-6sRzwAFz8x0Ulb8X4nxLrtMFejlsHEShzPF4Z_a_Bd5hnOJQsrPYSd1TGtPuYUI_HT04GWtByMeiG2Hn9373PEPSYVxWJetVs5e0G0SQM0xJ-2-K1jFHko3Tox9KXf-nfh4O9I3EcrfMXU_lTO8H54cu2PbTf1oD_p9N0ecvdkOKgawuIGTqUBy232XaqA5yWsK93rOWb1XUWjBZTH22RBzHw"/>
+    </div>
+  </div>
+</div>
 </div>
 </section>
 
 <!-- Final CTA -->
-<section class="py-32 px-6" id="get-pass">
-<div class="max-w-4xl mx-auto bg-surface-container-highest rounded-[3rem] p-16 text-center relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+<section class="py-32 px-6 md:px-8" id="get-pass">
+<div class="max-w-4xl mx-auto text-center bg-primary rounded-[3rem] py-24 px-12 relative overflow-hidden">
   <div class="relative z-10">
-    <h2 class="text-5xl font-serif mb-8">Ready for your next free coffee?</h2>
-    <p class="text-xl text-on-surface-variant mb-12 max-w-xl mx-auto">Join the people in Canggu who've retired their paper stamp cards for good. It's free, it's instant, and it lives in your pocket.</p>
-    <button class="bg-primary text-on-primary px-12 py-6 rounded-full text-xl font-bold shadow-xl hover:scale-105 transition-transform flex items-center gap-3 mx-auto">
-      <span class="material-symbols-outlined text-3xl">wallet</span>
-      Add to Apple Wallet
-    </button>
+    <h2 class="font-headline text-5xl md:text-6xl text-on-primary-container mb-8">Ready for your next free coffee?</h2>
+    <p class="text-on-primary-container/80 text-xl mb-12 max-w-xl mx-auto">Join the people in Canggu who've retired their paper stamp cards for good. It's free, it's instant, and it lives in your pocket.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <button class="bg-surface text-primary px-12 py-6 rounded-full text-xl font-bold shadow-xl hover:scale-105 transition-transform flex items-center gap-3 mx-auto sm:mx-0">
+        <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">wallet</span>
+        Add to Apple Wallet
+      </button>
+    </div>
   </div>
+  <!-- Grain texture in CTA -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="ctaNoise"><feTurbulence baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/></filter><rect filter="url(#ctaNoise)" height="100%" width="100%"/></svg>
+  </div>
+  <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+</div>
+</section>
+
+<!-- Bento CTA Grid -->
+<section class="pb-32 px-6 md:px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <a class="bg-surface-container-high rounded-3xl p-8 flex flex-col justify-center gap-4 transition-transform hover:scale-[1.02]" href="#how-it-works">
+    <span class="material-symbols-outlined text-secondary text-4xl">help_outline</span>
+    <h3 class="font-headline text-2xl">How It Works</h3>
+    <p class="text-sm text-on-surface-variant">Three steps to free coffee. See the walkthrough.</p>
+  </a>
+  <a class="bg-surface-container rounded-3xl p-8 flex flex-col justify-center gap-4 transition-transform hover:scale-[1.02]" href="#venues">
+    <span class="material-symbols-outlined text-primary text-4xl">explore</span>
+    <h3 class="font-headline text-2xl">Find Venues</h3>
+    <p class="text-sm text-on-surface-variant">See which cafes in Canggu are on Taplo.</p>
+  </a>
+  <a class="lg:col-span-2 bg-surface-container-low rounded-3xl p-10 flex items-center justify-between group hover:bg-surface-container transition-colors" href="/cafes.html">
+    <div class="max-w-xs">
+      <h3 class="font-headline text-2xl mb-2">Own a cafe?</h3>
+      <p class="text-sm text-on-surface-variant">See how Taplo helps you bring customers back. Free to start.</p>
+    </div>
+    <span class="material-symbols-outlined text-5xl text-primary transition-transform group-hover:translate-x-4">trending_flat</span>
+  </a>
 </div>
 </section>
 </main>
 
 <!-- Footer -->
 <footer class="w-full border-t border-[#1B6B4A]/10">
-<div class="max-w-7xl mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-  <div class="flex items-center gap-2">
-    <span class="material-symbols-outlined text-[#1B6B4A] text-xl">touch_app</span>
-    <span class="text-lg font-serif font-bold text-[#1B6B4A]">Taplo</span>
-    <span class="text-sm text-[#1A1A2E]/60 ml-2">&copy; 2026 Taplo</span>
+<div class="max-w-7xl mx-auto py-16 px-6 md:px-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div class="md:col-span-2">
+      <a class="font-headline text-2xl italic text-[#1A1A2E] block mb-4" href="/">Taplo</a>
+      <p class="text-on-surface-variant max-w-sm mb-6">Simple digital loyalty for Bali's independent cafes. Scan, earn stamps, get free coffee.</p>
+    </div>
+    <div>
+      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">Explore</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="#how-it-works">How It Works</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="#venues">Venues</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="#get-pass">Get Your Pass</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-bold mb-4 text-xs uppercase tracking-widest text-on-surface-variant">For Cafes</h5>
+      <ul class="space-y-3 text-sm">
+        <li><a class="text-secondary font-semibold hover:text-[#1B6B4A] transition-colors" href="/cafes.html">For Cafes</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="#">Privacy Policy</a></li>
+        <li><a class="text-on-surface-variant hover:text-[#1B6B4A] transition-colors" href="#">Terms of Service</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="flex gap-8">
-    <a class="text-sm text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-all" href="#how-it-works">How It Works</a>
-    <a class="text-sm text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-all" href="#venues">Venues</a>
-    <a class="text-sm text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-all" href="/cafes.html">For Cafes</a>
-    <a class="text-sm text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-all" href="#">Privacy</a>
+  <div class="mt-12 pt-8 border-t border-[#1B6B4A]/5 flex flex-col md:flex-row justify-between items-center gap-4">
+    <span class="text-sm text-on-surface-variant/50">&copy; 2026 Taplo. Crafted in Bali.</span>
+    <span class="text-sm text-on-surface-variant/50">hello@taplo.org</span>
   </div>
 </div>
 </footer>
