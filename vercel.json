@@ -8,6 +8,7 @@
     { "src": "/about", "dest": "/about.html" },
     { "src": "/venues", "dest": "/venues.html" },
     { "src": "/onboard", "dest": "/onboard.html" },
+    { "src": "/investors", "dest": "/investors.html" },
     { "src": "/(.*)", "dest": "/404.html" }
   ]
 }
