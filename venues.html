@@ -24,6 +24,8 @@
   .text-inked { letter-spacing: -0.02em; }
   .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .cafe-details { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.3s ease; opacity: 0; }
+  .cafe-details.open { max-height: 300px; opacity: 1; }
 </style>
 <script>
   tailwind.config = {
@@ -43,11 +45,17 @@
   "description": "Independent cafes in Canggu, Bali using Taplo digital loyalty stamps.",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "item": {"@type": "CafeOrCoffeeShop", "name": "Crate Cafe", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
-    {"@type": "ListItem", "position": 2, "item": {"@type": "CafeOrCoffeeShop", "name": "Hungry Bird", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
-    {"@type": "ListItem", "position": 3, "item": {"@type": "CafeOrCoffeeShop", "name": "Machinery Cafe", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
-    {"@type": "ListItem", "position": 4, "item": {"@type": "CafeOrCoffeeShop", "name": "ZIN Cafe", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
+    {"@type": "ListItem", "position": 2, "item": {"@type": "CafeOrCoffeeShop", "name": "Hungry Bird Coffee Roaster", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
+    {"@type": "ListItem", "position": 3, "item": {"@type": "CafeOrCoffeeShop", "name": "Machinery Cafe", "address": {"@type": "PostalAddress", "addressLocality": "Berawa", "addressRegion": "Bali", "addressCountry": "ID"}}},
+    {"@type": "ListItem", "position": 4, "item": {"@type": "CafeOrCoffeeShop", "name": "The Slow", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
     {"@type": "ListItem", "position": 5, "item": {"@type": "CafeOrCoffeeShop", "name": "BGS", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
-    {"@type": "ListItem", "position": 6, "item": {"@type": "CafeOrCoffeeShop", "name": "Milk & Madu", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}}
+    {"@type": "ListItem", "position": 6, "item": {"@type": "CafeOrCoffeeShop", "name": "Milk & Madu", "address": {"@type": "PostalAddress", "addressLocality": "Berawa", "addressRegion": "Bali", "addressCountry": "ID"}}},
+    {"@type": "ListItem", "position": 7, "item": {"@type": "CafeOrCoffeeShop", "name": "Shady Shack", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
+    {"@type": "ListItem", "position": 8, "item": {"@type": "CafeOrCoffeeShop", "name": "Vida Cafe", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
+    {"@type": "ListItem", "position": 9, "item": {"@type": "CafeOrCoffeeShop", "name": "ZIN Cafe", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
+    {"@type": "ListItem", "position": 10, "item": {"@type": "CafeOrCoffeeShop", "name": "Dojo Bali", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
+    {"@type": "ListItem", "position": 11, "item": {"@type": "CafeOrCoffeeShop", "name": "Tropical Nomad", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}},
+    {"@type": "ListItem", "position": 12, "item": {"@type": "CafeOrCoffeeShop", "name": "Outpost", "address": {"@type": "PostalAddress", "addressLocality": "Canggu", "addressRegion": "Bali", "addressCountry": "ID"}}}
   ]
 }
 </script>
@@ -61,7 +69,7 @@
   <a class="font-headline text-2xl italic text-[#1A1A2E]" href="/" onclick="if(window.location.pathname==='/'){event.preventDefault();window.location.reload()}">Taplo</a>
   <div class="hidden md:flex items-center gap-10 text-sm tracking-tight font-medium">
     <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/">Experience</a>
-    <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/venues">Venues</a>
+    <a class="text-[#1B6B4A] font-bold border-b-2 border-[#1B6B4A] pb-1" href="/venues">Venues</a>
     <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/cafes">For Cafes</a>
     <a class="text-[#1A1A2E]/60 hover:text-[#1B6B4A] transition-colors" href="/about">About</a>
   </div>
@@ -74,7 +82,7 @@
 </div>
 <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 space-y-4 bg-[#fdf9f3]/95 backdrop-blur-lg">
   <a class="block text-[#1A1A2E]/70 font-medium" href="/">Home</a>
-  <a class="block text-[#1A1A2E]/70 font-medium" href="/venues">Venues</a>
+  <a class="block text-[#1B6B4A] font-bold" href="/venues">Venues</a>
   <a class="block text-[#1A1A2E]/70 font-medium" href="/cafes">For Cafes</a>
   <a class="block text-[#1A1A2E]/70 font-medium" href="/about">About</a>
   <a class="block text-[#1A1A2E]/70 font-medium" href="/help">Help</a>
@@ -87,7 +95,7 @@
 <section class="pt-44 pb-16 px-6 md:px-8 max-w-5xl mx-auto">
   <span class="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2 rounded-full text-sm uppercase tracking-[0.15em] font-bold mb-8">
     <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">location_on</span>
-    Canggu & Beyond
+    12 Partner Cafes
   </span>
   <h1 class="font-headline text-6xl md:text-7xl text-inked text-on-background leading-[0.95] mb-6">Find a Taplo cafe.</h1>
   <p class="text-on-surface-variant text-xl max-w-2xl leading-relaxed">
@@ -109,12 +117,21 @@
 
 <!-- Cafe Listings -->
 <section class="px-6 md:px-8 max-w-5xl mx-auto pb-32">
-<div class="grid md:grid-cols-2 gap-8">
-  <!-- Cafe Card -->
+
+<!-- Coffee Shops -->
+<div class="mb-6">
+  <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] font-bold text-on-surface-variant/60">
+    <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+    Coffee Shops
+  </span>
+</div>
+<div class="grid md:grid-cols-2 gap-8 mb-16">
+
+  <!-- Crate Cafe -->
   <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
       <img alt="Crate Cafe Canggu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop"/>
-      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free coffee</span>
     </div>
     <div class="p-8">
       <div class="flex items-start justify-between mb-2">
@@ -124,19 +141,31 @@
       <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
         <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Canggu Padang Linjong
       </p>
-      <p class="text-on-surface-variant leading-relaxed mb-4">Iconic Canggu brunch spot. Healthy bowls, great coffee, and one of the OG Taplo partners.</p>
-      <div class="flex flex-wrap gap-2">
+      <p class="text-on-surface-variant leading-relaxed mb-4">Budget-friendly local favorite. Big portions, healthy bowls, great coffee, and one of the OG Taplo partners.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Brunch</span>
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Specialty Coffee</span>
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">WiFi</span>
       </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Coffees from</span><span class="font-semibold">30K–40K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Any coffee purchase</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">Latte, Cappuccino, or Iced Coffee</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~38K IDR (~$2.40)</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Hungry Bird -->
   <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
-      <img alt="Hungry Bird Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&h=400&fit=crop"/>
-      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+      <img alt="Hungry Bird Coffee Roaster" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&h=400&fit=crop"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free coffee</span>
     </div>
     <div class="p-8">
       <div class="flex items-start justify-between mb-2">
@@ -146,62 +175,109 @@
       <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
         <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Raya Semat
       </p>
-      <p class="text-on-surface-variant leading-relaxed mb-4">Specialty roasters with single-origin beans. Known for their pour-over and cold brew.</p>
-      <div class="flex flex-wrap gap-2">
+      <p class="text-on-surface-variant leading-relaxed mb-4">Specialty roasters with single-origin beans. Best pour-over and cold brew in Canggu.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Specialty Roaster</span>
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Pour Over</span>
+      </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Coffees from</span><span class="font-semibold">21K–38K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Any coffee or breakfast combo</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">Single-origin filter or Piccolo Latte</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~35K IDR (~$2.20)</span></div>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- Machinery Cafe -->
   <div data-area="berawa" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
-      <img alt="Machinery Cafe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&h=400&fit=crop"/>
-      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+      <img alt="Machinery Cafe Berawa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&h=400&fit=crop"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free coffee</span>
     </div>
     <div class="p-8">
       <div class="flex items-start justify-between mb-2">
         <h3 class="font-headline text-2xl">Machinery Cafe</h3>
-        <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">brunch_dining</span>
+        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
       </div>
       <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
         <span class="material-symbols-outlined text-sm">location_on</span> Berawa, Jl. Pantai Berawa
       </p>
-      <p class="text-on-surface-variant leading-relaxed mb-4">Industrial-chic brunch spot with excellent espresso. Great for the morning crowd.</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Brunch</span>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Premium, stylish spot with industrial-chic vibes and excellent espresso.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Premium</span>
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Espresso</span>
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">WiFi</span>
+      </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Coffees from</span><span class="font-semibold">44K–64K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Coffee purchase &ge;52K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">Flat White or Cappuccino</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~58K IDR (~$3.60)</span></div>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- The Slow -->
   <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
-      <img alt="ZIN Cafe coworking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&h=400&fit=crop"/>
-      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+      <img alt="The Slow Canggu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&h=400&fit=crop"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free coffee</span>
     </div>
     <div class="p-8">
       <div class="flex items-start justify-between mb-2">
-        <h3 class="font-headline text-2xl">ZIN Cafe</h3>
-        <span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">laptop_mac</span>
+        <h3 class="font-headline text-2xl">The Slow</h3>
+        <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">hotel</span>
       </div>
       <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
         <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Pantai Batu Bolong
       </p>
-      <p class="text-on-surface-variant leading-relaxed mb-4">Coworking-friendly with fast WiFi, power outlets everywhere, and solid flat whites.</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Coworking</span>
-        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Fast WiFi</span>
-        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Power Outlets</span>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Boutique hotel with an upscale, curated aesthetic. Premium coffee in a beautiful setting.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Upscale</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Boutique</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Design</span>
+      </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Coffees from</span><span class="font-semibold">55K–75K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Any order &ge;60K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">House Latte or Long Black</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~60K IDR (~$3.75)</span></div>
+        </div>
       </div>
     </div>
   </div>
 
+</div>
+
+<!-- Brunch Spots -->
+<div class="mb-6">
+  <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] font-bold text-on-surface-variant/60">
+    <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">brunch_dining</span>
+    Brunch Spots
+  </span>
+</div>
+<div class="grid md:grid-cols-2 gap-8 mb-16">
+
+  <!-- BGS -->
   <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
       <img alt="BGS Bali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=600&h=400&fit=crop"/>
-      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free coffee</span>
     </div>
     <div class="p-8">
       <div class="flex items-start justify-between mb-2">
@@ -209,21 +285,33 @@
         <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">brunch_dining</span>
       </div>
       <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
-        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Pantai Batu Mejan
+        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Pantai Batu Bolong
       </p>
       <p class="text-on-surface-variant leading-relaxed mb-4">Surf-meets-brunch vibes. Smoothie bowls, eggs benny, and strong batch brew on the deck.</p>
-      <div class="flex flex-wrap gap-2">
+      <div class="flex flex-wrap gap-2 mb-4">
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Brunch</span>
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Smoothies</span>
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Surf Vibes</span>
       </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Coffees from</span><span class="font-semibold">35K–48K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Any coffee or smoothie</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">Iced Latte or Coconut Cold Brew</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~45K IDR (~$2.80)</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Milk & Madu -->
   <div data-area="berawa" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
-      <img alt="Milk and Madu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=600&h=400&fit=crop"/>
-      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
+      <img alt="Milk and Madu Berawa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=600&h=400&fit=crop"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free coffee</span>
     </div>
     <div class="p-8">
       <div class="flex items-start justify-between mb-2">
@@ -233,14 +321,241 @@
       <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
         <span class="material-symbols-outlined text-sm">location_on</span> Berawa, Jl. Pantai Berawa
       </p>
-      <p class="text-on-surface-variant leading-relaxed mb-4">Family-friendly with a huge menu. Great lattes, big portions, and a relaxed garden setting.</p>
-      <div class="flex flex-wrap gap-2">
+      <p class="text-on-surface-variant leading-relaxed mb-4">Beloved family brunch institution with great pastries, big portions, and a relaxed garden setting.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Family</span>
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Garden</span>
         <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">All-Day</span>
       </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Coffees from</span><span class="font-semibold">31K–50K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Any hot or iced coffee</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">Flat White, Latte, or Cappuccino</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~44K IDR (~$2.75)</span></div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- Shady Shack -->
+  <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="Shady Shack Canggu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=600&h=400&fit=crop"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free drink</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">Shady Shack</h3>
+        <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">eco</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Tanah Barak
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Plant-based paradise with boho vibes. Oat milk lattes, matcha, and the best vegan bowls around.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Plant-Based</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Matcha</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Boho</span>
+      </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Drinks from</span><span class="font-semibold">35K–50K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Any drink (coffee, matcha, smoothie)</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">Oat Milk Latte or Matcha Latte</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~48K IDR (~$3.00)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vida Cafe -->
+  <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="Vida Cafe Canggu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&h=400&fit=crop"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free coffee</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">Vida Cafe</h3>
+        <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">brunch_dining</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Pantai Batu Bolong
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Healthy, chill, all-day brunch. Simple and straightforward with a no-frills vibe.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Healthy</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">All-Day Brunch</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Chill</span>
+      </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Coffees from</span><span class="font-semibold">35K–45K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Any coffee purchase</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">Americano, Latte, or Iced Coffee</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~42K IDR (~$2.60)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Coworking Cafes -->
+<div class="mb-6">
+  <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] font-bold text-on-surface-variant/60">
+    <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">laptop_mac</span>
+    Coworking Cafes
+  </span>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+
+  <!-- ZIN Cafe -->
+  <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="ZIN Cafe coworking Canggu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&h=400&fit=crop"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free coffee</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">ZIN Cafe</h3>
+        <span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">laptop_mac</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Pantai Batu Bolong
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Popular coworking cafe with own roastery and Balinese beans. Fast WiFi and power outlets everywhere.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Coworking</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Own Roastery</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Fast WiFi</span>
+      </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Coffees from</span><span class="font-semibold">40K–55K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Coffee purchase &ge;40K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">Cappuccino or Latte</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~52K IDR (~$3.25)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dojo Bali -->
+  <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="Dojo Bali coworking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free coffee</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">Dojo Bali</h3>
+        <span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">laptop_mac</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Batu Mejan
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">OG Canggu coworking and community hub. Great cafe, events, and the digital nomad heartbeat.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Coworking</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Community</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Events</span>
+      </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Coffees from</span><span class="font-semibold">40K–55K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Any cafe purchase (coffee or food)</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">Any standard coffee up to 50K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~50K IDR (~$3.10)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tropical Nomad -->
+  <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="Tropical Nomad Canggu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&h=400&fit=crop"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free coffee</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">Tropical Nomad</h3>
+        <span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">laptop_mac</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Pantai Batu Bolong
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Budget coworking + cafe for the digital nomad crowd. Affordable and accessible.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Budget</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Coworking</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Fast WiFi</span>
+      </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Coffees from</span><span class="font-semibold">30K–45K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Any purchase (coffee, food, drinks)</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">Iced Latte or Cold Brew</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~42K IDR (~$2.60)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Outpost -->
+  <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+    <div class="h-48 bg-surface-container-high relative overflow-hidden">
+      <img alt="Outpost coworking Canggu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=400&fit=crop"/>
+      <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free coffee</span>
+    </div>
+    <div class="p-8">
+      <div class="flex items-start justify-between mb-2">
+        <h3 class="font-headline text-2xl">Outpost</h3>
+        <span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">laptop_mac</span>
+      </div>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span> Canggu, Jl. Raya Semat
+      </p>
+      <p class="text-on-surface-variant leading-relaxed mb-4">Premium coworking with a professional crowd. Solid coffee and a productivity-first environment.</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Premium</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Coworking</span>
+        <span class="bg-surface-container-low text-on-surface-variant text-xs px-3 py-1 rounded-full">Professional</span>
+      </div>
+      <button onclick="this.nextElementSibling.classList.toggle('open'); this.querySelector('.arrow').classList.toggle('rotate-180')" class="text-primary text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+        Loyalty details <span class="material-symbols-outlined text-sm arrow transition-transform">expand_more</span>
+      </button>
+      <div class="cafe-details">
+        <div class="pt-4 mt-4 border-t border-outline-variant/20 space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-on-surface-variant">Coffees from</span><span class="font-semibold">45K–65K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Earn a stamp</span><span class="font-semibold">Coffee purchase &ge;50K IDR</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Free reward</span><span class="font-semibold text-primary">Flat White or Latte</span></div>
+          <div class="flex justify-between"><span class="text-on-surface-variant">Reward value</span><span class="font-semibold">~55K IDR (~$3.45)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- More Coming -->
@@ -270,16 +585,15 @@
   </div>
   <div class="px-6 md:px-8 pb-6 md:pb-8">
     <div class="flex flex-wrap items-center gap-4 text-xs text-on-surface-variant">
-      <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary inline-block"></span> Canggu</span>
-      <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-secondary inline-block"></span> Berawa</span>
+      <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary inline-block"></span> 10 in Canggu</span>
+      <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-secondary inline-block"></span> 2 in Berawa</span>
       <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-outline-variant inline-block"></span> Coming soon</span>
-      <span class="text-on-surface-variant/40 ml-auto">Pererenan &bull; Seminyak &bull; Ubud coming next</span>
+      <span class="text-on-surface-variant/40 ml-auto">Pererenan &bull; Seminyak &bull; Ubud next</span>
     </div>
   </div>
 </div>
 </div>
 
-</div>
 </section>
 </main>
 
@@ -324,7 +638,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   // Fade-in animations
-  document.querySelectorAll('main > section, main > section > div > div').forEach(el => el.classList.add('fade-up'));
+  document.querySelectorAll('.cafe-card, main > section').forEach(el => el.classList.add('fade-up'));
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
@@ -333,20 +647,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Area filters
   const btns = document.querySelectorAll('.area-btn');
   const cards = document.querySelectorAll('.cafe-card');
+  const categoryHeaders = document.querySelectorAll('[class*="mb-6"]');
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
-      // Update button styles
       btns.forEach(b => {
         b.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
         b.classList.add('bg-surface-container-lowest', 'text-on-surface-variant', 'font-semibold', 'editorial-shadow');
       });
       btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant', 'font-semibold', 'editorial-shadow');
       btn.classList.add('bg-primary', 'text-on-primary', 'font-bold');
-      // Filter cards
       cards.forEach(card => {
         if (filter === 'all' || card.dataset.area === filter) {
           card.style.display = '';
+          card.classList.add('visible');
         } else {
           card.style.display = 'none';
         }
