@@ -97,11 +97,11 @@
 
 <!-- Area Filters -->
 <section class="px-6 md:px-8 max-w-5xl mx-auto pb-12">
-  <div class="flex flex-wrap gap-3">
-    <button class="bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-bold">All Areas</button>
-    <button class="bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow hover:bg-surface-container-high transition-colors">Canggu</button>
-    <button class="bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow hover:bg-surface-container-high transition-colors">Berawa</button>
-    <button class="bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow hover:bg-surface-container-high transition-colors">Pererenan</button>
+  <div id="area-filters" class="flex flex-wrap gap-3">
+    <button data-filter="all" class="area-btn bg-primary text-on-primary px-5 py-2.5 rounded-full text-sm font-bold transition-colors">All Areas</button>
+    <button data-filter="canggu" class="area-btn bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow hover:bg-surface-container-high transition-colors">Canggu</button>
+    <button data-filter="berawa" class="area-btn bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow hover:bg-surface-container-high transition-colors">Berawa</button>
+    <button data-filter="pererenan" class="area-btn bg-surface-container-lowest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow hover:bg-surface-container-high transition-colors">Pererenan</button>
     <button class="bg-surface-container-lowest text-on-surface-variant/40 px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow cursor-default">Seminyak <span class="text-xs">(soon)</span></button>
     <button class="bg-surface-container-lowest text-on-surface-variant/40 px-5 py-2.5 rounded-full text-sm font-semibold editorial-shadow cursor-default">Ubud <span class="text-xs">(soon)</span></button>
   </div>
@@ -111,7 +111,7 @@
 <section class="px-6 md:px-8 max-w-5xl mx-auto pb-32">
 <div class="grid md:grid-cols-2 gap-8">
   <!-- Cafe Card -->
-  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+  <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
       <img alt="Crate Cafe Canggu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
@@ -133,7 +133,7 @@
     </div>
   </div>
 
-  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+  <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
       <img alt="Hungry Bird Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
@@ -154,7 +154,7 @@
     </div>
   </div>
 
-  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+  <div data-area="berawa" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
       <img alt="Machinery Cafe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
@@ -176,7 +176,7 @@
     </div>
   </div>
 
-  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+  <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
       <img alt="ZIN Cafe coworking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
@@ -198,7 +198,7 @@
     </div>
   </div>
 
-  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+  <div data-area="canggu" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
       <img alt="BGS Bali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
@@ -220,7 +220,7 @@
     </div>
   </div>
 
-  <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
+  <div data-area="berawa" class="cafe-card bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
       <img alt="Milk and Madu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
@@ -323,11 +323,36 @@
 </footer>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  // Fade-in animations
   document.querySelectorAll('main > section, main > section > div > div').forEach(el => el.classList.add('fade-up'));
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // Area filters
+  const btns = document.querySelectorAll('.area-btn');
+  const cards = document.querySelectorAll('.cafe-card');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      // Update button styles
+      btns.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
+        b.classList.add('bg-surface-container-lowest', 'text-on-surface-variant', 'font-semibold', 'editorial-shadow');
+      });
+      btn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant', 'font-semibold', 'editorial-shadow');
+      btn.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+      // Filter cards
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.area === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
 });
 </script>
 </body>
