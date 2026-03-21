@@ -2,6 +2,7 @@
   "version": 2,
   "routes": [
     { "handle": "filesystem" },
+    { "src": "/cafes", "dest": "/cafes.html" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
