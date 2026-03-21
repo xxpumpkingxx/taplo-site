@@ -18,7 +18,7 @@
 <style>
   body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdf9f3; color: #1A1A2E; }
   .font-serif { font-family: 'DM Serif Display', serif; }
-  .grain-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.03; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+  .grain-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; opacity: 0.04; mix-blend-mode: soft-light; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
   .editorial-shadow { box-shadow: 0 32px 64px -12px rgba(26, 26, 46, 0.08); }
   .text-inked { letter-spacing: -0.02em; }
@@ -107,13 +107,89 @@
   </div>
 </section>
 
+<!-- Map -->
+<section class="px-6 md:px-8 max-w-5xl mx-auto pb-16">
+<div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow p-6 md:p-10 relative overflow-hidden">
+  <div class="flex items-center gap-2 mb-6">
+    <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">map</span>
+    <h3 class="font-headline text-xl">Our locations in Canggu</h3>
+  </div>
+  <div class="relative w-full" style="padding-bottom: 50%;">
+    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Ocean -->
+      <rect width="800" height="400" rx="16" fill="#e8f4f0"/>
+      <!-- Beach/coast line -->
+      <path d="M0 120 Q100 100 200 130 Q300 110 400 125 Q500 100 600 115 Q700 105 800 120 L800 400 L0 400Z" fill="#f7f3ed"/>
+      <!-- Roads -->
+      <line x1="150" y1="140" x2="150" y2="380" stroke="#ddd9d4" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="350" y1="130" x2="350" y2="380" stroke="#ddd9d4" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="550" y1="120" x2="550" y2="380" stroke="#ddd9d4" stroke-width="2" stroke-dasharray="6 4"/>
+      <line x1="50" y1="250" x2="750" y2="250" stroke="#ddd9d4" stroke-width="2" stroke-dasharray="6 4"/>
+      <!-- Ocean label -->
+      <text x="400" y="70" text-anchor="middle" fill="#bfc9c0" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600" letter-spacing="4">INDIAN OCEAN</text>
+      <!-- Area labels -->
+      <text x="150" y="370" text-anchor="middle" fill="#6f7a72" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" letter-spacing="3">PERERENAN</text>
+      <text x="350" y="370" text-anchor="middle" fill="#6f7a72" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" letter-spacing="3">CANGGU</text>
+      <text x="550" y="370" text-anchor="middle" fill="#6f7a72" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700" letter-spacing="3">BERAWA</text>
+      <!-- Pin: Crate Cafe — Canggu -->
+      <g transform="translate(310, 175)">
+        <circle cx="0" cy="0" r="18" fill="#005235" opacity="0.15"/>
+        <circle cx="0" cy="0" r="8" fill="#005235"/>
+        <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+        <text x="14" y="5" fill="#1c1c18" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="600">Crate Cafe</text>
+      </g>
+      <!-- Pin: Hungry Bird — Canggu -->
+      <g transform="translate(390, 220)">
+        <circle cx="0" cy="0" r="18" fill="#005235" opacity="0.15"/>
+        <circle cx="0" cy="0" r="8" fill="#005235"/>
+        <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+        <text x="14" y="5" fill="#1c1c18" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="600">Hungry Bird</text>
+      </g>
+      <!-- Pin: ZIN Cafe — Batu Bolong -->
+      <g transform="translate(420, 165)">
+        <circle cx="0" cy="0" r="18" fill="#005235" opacity="0.15"/>
+        <circle cx="0" cy="0" r="8" fill="#005235"/>
+        <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+        <text x="14" y="5" fill="#1c1c18" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="600">ZIN Cafe</text>
+      </g>
+      <!-- Pin: BGS — Batu Mejan -->
+      <g transform="translate(285, 215)">
+        <circle cx="0" cy="0" r="18" fill="#005235" opacity="0.15"/>
+        <circle cx="0" cy="0" r="8" fill="#005235"/>
+        <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+        <text x="-55" y="-14" fill="#1c1c18" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="600">BGS</text>
+      </g>
+      <!-- Pin: Machinery Cafe — Berawa -->
+      <g transform="translate(530, 200)">
+        <circle cx="0" cy="0" r="18" fill="#ab3500" opacity="0.15"/>
+        <circle cx="0" cy="0" r="8" fill="#ab3500"/>
+        <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+        <text x="14" y="5" fill="#1c1c18" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="600">Machinery</text>
+      </g>
+      <!-- Pin: Milk & Madu — Berawa -->
+      <g transform="translate(580, 250)">
+        <circle cx="0" cy="0" r="18" fill="#ab3500" opacity="0.15"/>
+        <circle cx="0" cy="0" r="8" fill="#ab3500"/>
+        <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+        <text x="14" y="5" fill="#1c1c18" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="600">Milk & Madu</text>
+      </g>
+    </svg>
+  </div>
+  <div class="flex items-center gap-6 mt-4 text-xs text-on-surface-variant">
+    <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary inline-block"></span> Canggu</span>
+    <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-secondary inline-block"></span> Berawa</span>
+    <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-outline-variant inline-block"></span> Coming soon</span>
+  </div>
+</div>
+</section>
+
 <!-- Cafe Listings -->
 <section class="px-6 md:px-8 max-w-5xl mx-auto pb-32">
 <div class="grid md:grid-cols-2 gap-8">
   <!-- Cafe Card -->
   <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
-      <img alt="Crate Cafe Canggu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChS9TnmOlpAH9U1rXHNc6UQ3o8V763tyQ8GNQgb87_-qScg3phe8GyFP2L-GfvnsgP8Jubcd2nUSHRMPYslhvCcG1FUvSKLEvyLST-abW35lI_8G9no41LCGpXRLvjwN7cozrniRqCtTw9XHIEuznem82pdteP3IuB-i3AIec_pIbKWI1toKjLcMlgrPyQn4Yz85B-vUvQJco7pTj14WL_7fQ_6mG1aB30OBSjvz9WCRY8vOhVO2YIcu5GzVLDQS-xF8ua7yg7TQ"/>
+      <img alt="Crate Cafe Canggu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
     </div>
     <div class="p-8">
@@ -135,7 +211,7 @@
 
   <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
-      <img alt="Hungry Bird Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5cHkT3ijOteRx0GHBRfTX74uPDaVS-famo_l84LITFGNWGs8R-6sRzwAFz8x0Ulb8X4nxLrtMFejlsHEShzPF4Z_a_Bd5hnOJQsrPYSd1TGtPuYUI_HT04GWtByMeiG2Hn9373PEPSYVxWJetVs5e0G0SQM0xJ-2-K1jFHko3Tox9KXf-nfh4O9I3EcrfMXU_lTO8H54cu2PbTf1oD_p9N0ecvdkOKgawuIGTqUBy232XaqA5yWsK93rOWb1XUWjBZTH22RBzHw"/>
+      <img alt="Hungry Bird Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
     </div>
     <div class="p-8">
@@ -156,7 +232,7 @@
 
   <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
-      <img alt="Machinery Cafe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChS9TnmOlpAH9U1rXHNc6UQ3o8V763tyQ8GNQgb87_-qScg3phe8GyFP2L-GfvnsgP8Jubcd2nUSHRMPYslhvCcG1FUvSKLEvyLST-abW35lI_8G9no41LCGpXRLvjwN7cozrniRqCtTw9XHIEuznem82pdteP3IuB-i3AIec_pIbKWI1toKjLcMlgrPyQn4Yz85B-vUvQJco7pTj14WL_7fQ_6mG1aB30OBSjvz9WCRY8vOhVO2YIcu5GzVLDQS-xF8ua7yg7TQ"/>
+      <img alt="Machinery Cafe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
     </div>
     <div class="p-8">
@@ -178,7 +254,7 @@
 
   <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
-      <img alt="ZIN Cafe coworking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5cHkT3ijOteRx0GHBRfTX74uPDaVS-famo_l84LITFGNWGs8R-6sRzwAFz8x0Ulb8X4nxLrtMFejlsHEShzPF4Z_a_Bd5hnOJQsrPYSd1TGtPuYUI_HT04GWtByMeiG2Hn9373PEPSYVxWJetVs5e0G0SQM0xJ-2-K1jFHko3Tox9KXf-nfh4O9I3EcrfMXU_lTO8H54cu2PbTf1oD_p9N0ecvdkOKgawuIGTqUBy232XaqA5yWsK93rOWb1XUWjBZTH22RBzHw"/>
+      <img alt="ZIN Cafe coworking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
     </div>
     <div class="p-8">
@@ -200,7 +276,7 @@
 
   <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
-      <img alt="BGS Bali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChS9TnmOlpAH9U1rXHNc6UQ3o8V763tyQ8GNQgb87_-qScg3phe8GyFP2L-GfvnsgP8Jubcd2nUSHRMPYslhvCcG1FUvSKLEvyLST-abW35lI_8G9no41LCGpXRLvjwN7cozrniRqCtTw9XHIEuznem82pdteP3IuB-i3AIec_pIbKWI1toKjLcMlgrPyQn4Yz85B-vUvQJco7pTj14WL_7fQ_6mG1aB30OBSjvz9WCRY8vOhVO2YIcu5GzVLDQS-xF8ua7yg7TQ"/>
+      <img alt="BGS Bali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
     </div>
     <div class="p-8">
@@ -222,7 +298,7 @@
 
   <div class="bg-surface-container-lowest rounded-[2rem] editorial-shadow overflow-hidden group hover:translate-y-[-4px] transition-transform duration-500">
     <div class="h-48 bg-surface-container-high relative overflow-hidden">
-      <img alt="Milk and Madu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5cHkT3ijOteRx0GHBRfTX74uPDaVS-famo_l84LITFGNWGs8R-6sRzwAFz8x0Ulb8X4nxLrtMFejlsHEShzPF4Z_a_Bd5hnOJQsrPYSd1TGtPuYUI_HT04GWtByMeiG2Hn9373PEPSYVxWJetVs5e0G0SQM0xJ-2-K1jFHko3Tox9KXf-nfh4O9I3EcrfMXU_lTO8H54cu2PbTf1oD_p9N0ecvdkOKgawuIGTqUBy232XaqA5yWsK93rOWb1XUWjBZTH22RBzHw"/>
+      <img alt="Milk and Madu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=600&h=400&fit=crop"/>
       <span class="absolute top-4 right-4 bg-primary text-on-primary text-xs font-bold px-3 py-1 rounded-full">5 stamps = free</span>
     </div>
     <div class="p-8">
