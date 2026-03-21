@@ -5,6 +5,11 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <title>Taplo | Never Lose a Free Coffee Again</title>
+<meta name="description" content="Digital loyalty for Canggu's best cafes. Scan a QR, get a free pass in Apple or Google Wallet, earn stamps, get free coffee. No app needed."/>
+<meta property="og:title" content="Taplo — Never Lose a Free Coffee Again"/>
+<meta property="og:description" content="Digital loyalty for Canggu's best cafes. One pass, every partner cafe, free coffee on autopilot."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://taplo.org"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -92,12 +97,15 @@
 <!-- Hero Section: Asymmetric Editorial Layout -->
 <section class="pt-44 pb-32 px-6 md:px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 <div class="lg:col-span-7 flex flex-col gap-8">
-  <span class="text-secondary font-label text-sm uppercase tracking-[0.2em] font-bold">Now live in Canggu</span>
+  <span class="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-5 py-2 rounded-full text-sm uppercase tracking-[0.15em] font-bold">
+    <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">location_on</span>
+    Now live in Canggu, Bali
+  </span>
   <h1 class="font-headline text-6xl md:text-7xl lg:text-8xl text-inked text-on-background leading-[0.95]">
     Never lose a free coffee again.
   </h1>
   <p class="text-on-surface-variant text-xl max-w-xl leading-relaxed">
-    One pass in your Apple Wallet. Earn stamps at every partner cafe. No app, no paper cards, no hassle.
+    One pass in Apple Wallet or Google Wallet. Earn stamps at every partner cafe. No app, no paper cards, no hassle.
   </p>
   <div class="flex flex-col sm:flex-row gap-4 items-start pt-2">
     <a class="bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold shadow-xl shadow-primary/10 transition-all hover:translate-y-[-2px] flex items-center gap-3" href="#get-pass">
@@ -123,6 +131,28 @@
   </div>
   <!-- Background blur accent -->
   <div class="absolute -top-12 -right-12 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+</div>
+</section>
+
+<!-- Social Proof Stats -->
+<section class="pb-16 px-6 md:px-8 max-w-5xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+  <div class="bg-surface-container-lowest rounded-[2rem] p-8 editorial-shadow">
+    <p class="font-headline text-4xl text-primary mb-1">3 sec</p>
+    <p class="text-on-surface-variant text-sm">to get your pass</p>
+  </div>
+  <div class="bg-surface-container-lowest rounded-[2rem] p-8 editorial-shadow">
+    <p class="font-headline text-4xl text-secondary mb-1">5</p>
+    <p class="text-on-surface-variant text-sm">stamps = free coffee</p>
+  </div>
+  <div class="bg-surface-container-lowest rounded-[2rem] p-8 editorial-shadow">
+    <p class="font-headline text-4xl text-primary mb-1">$0</p>
+    <p class="text-on-surface-variant text-sm">always free for you</p>
+  </div>
+  <div class="bg-surface-container-lowest rounded-[2rem] p-8 editorial-shadow">
+    <p class="font-headline text-4xl text-secondary mb-1">0</p>
+    <p class="text-on-surface-variant text-sm">apps to download</p>
+  </div>
 </div>
 </section>
 
@@ -190,7 +220,7 @@
         <div class="w-12 h-12 rounded-full border-2 border-outline-variant flex items-center justify-center text-primary shrink-0 font-headline text-lg group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">2</div>
         <div>
           <h4 class="text-lg font-bold mb-2">Pass saves to Wallet</h4>
-          <p class="text-on-surface-variant leading-relaxed">Your Taplo pass lands in Apple Wallet instantly. No app to download, no account to create.</p>
+          <p class="text-on-surface-variant leading-relaxed">Your Taplo pass lands in Apple Wallet or Google Wallet instantly. No app to download, no account to create.</p>
         </div>
       </div>
       <div class="flex items-start space-x-6 group">
@@ -217,7 +247,7 @@
     <div class="z-10">
       <span class="material-symbols-outlined text-4xl text-primary mb-6">smartphone</span>
       <h3 class="font-headline text-3xl mb-4">No app to download</h3>
-      <p class="text-on-surface-variant max-w-md text-lg">Your Taplo pass lives in Apple Wallet. It's always there — even offline at the beach. Just scan and go.</p>
+      <p class="text-on-surface-variant max-w-md text-lg">Your Taplo pass lives in Apple Wallet or Google Wallet. It's always there — even offline at the beach. Just scan and go.</p>
     </div>
     <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-700"></div>
   </div>
@@ -273,10 +303,9 @@
       </div>
       <h3 class="font-headline text-2xl mb-3">Coffee Shops</h3>
       <p class="text-on-surface-variant leading-relaxed mb-6">Your daily flat white, pour-over, or iced latte. Earn stamps at specialty roasters and neighborhood favorites.</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">Specialty Roasters</span>
-        <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">Third Wave</span>
-        <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">Local Favorites</span>
+      <div class="mt-6 pt-6 border-t border-outline-variant/10">
+        <p class="text-xs uppercase tracking-widest text-on-surface-variant/50 font-bold mb-3">Partner cafes</p>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Crate Cafe &bull; Hungry Bird &bull; Machinery Cafe &bull; The Slow &bull; and more joining weekly</p>
       </div>
     </div>
     <!-- Brunch Spots -->
@@ -286,10 +315,9 @@
       </div>
       <h3 class="font-headline text-2xl mb-3">Brunch Spots</h3>
       <p class="text-on-surface-variant leading-relaxed mb-6">Acai bowls, avocado toast, and a cappuccino. Your brunch coffee counts toward your next freebie too.</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">All-Day Brunch</span>
-        <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">Healthy Bowls</span>
-        <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">Smoothie Bars</span>
+      <div class="mt-6 pt-6 border-t border-outline-variant/10">
+        <p class="text-xs uppercase tracking-widest text-on-surface-variant/50 font-bold mb-3">Partner cafes</p>
+        <p class="text-on-surface-variant text-sm leading-relaxed">BGS &bull; Milk & Madu &bull; Shady Shack &bull; Vida Cafe &bull; and more joining weekly</p>
       </div>
     </div>
     <!-- Coworking Cafes -->
@@ -299,10 +327,9 @@
       </div>
       <h3 class="font-headline text-2xl mb-3">Coworking Cafes</h3>
       <p class="text-on-surface-variant leading-relaxed mb-6">Fast wifi, good coffee, and a stamp every time. The digital nomad's dream loyalty setup.</p>
-      <div class="flex flex-wrap gap-2">
-        <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">Fast WiFi</span>
-        <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">Power Outlets</span>
-        <span class="bg-surface-container-low text-on-surface-variant text-sm px-3 py-1 rounded-full">All-Day Seating</span>
+      <div class="mt-6 pt-6 border-t border-outline-variant/10">
+        <p class="text-xs uppercase tracking-widest text-on-surface-variant/50 font-bold mb-3">Partner cafes</p>
+        <p class="text-on-surface-variant text-sm leading-relaxed">ZIN Cafe &bull; Dojo Bali &bull; Tropical Nomad &bull; Outpost &bull; and more joining weekly</p>
       </div>
     </div>
   </div>
@@ -316,8 +343,8 @@
   <div class="md:w-1/2">
     <span class="inline-block bg-secondary/10 text-secondary px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-6">Coming Soon</span>
     <h2 class="font-headline text-5xl md:text-6xl mb-8 leading-tight">Send someone<br/>a coffee.</h2>
-    <p class="text-on-surface-variant text-xl leading-relaxed mb-8">Gift a free coffee to a friend, a date, or a stranger. Straight to their Apple Wallet. We're building it now.</p>
-    <div class="space-y-6">
+    <p class="text-on-surface-variant text-xl leading-relaxed mb-8">Gift a free coffee to a friend, a date, or a stranger. Straight to their Wallet. We're building it now.</p>
+    <div class="space-y-6 mb-10">
       <div class="border-l-2 border-secondary pl-8">
         <h4 class="font-bold text-lg mb-1">No awkward Venmo requests</h4>
         <p class="text-on-surface-variant">Pick a cafe, pick a drink, send it. They redeem it next time they visit.</p>
@@ -326,6 +353,13 @@
         <h4 class="font-bold text-lg mb-1">Works for anyone</h4>
         <p class="text-on-surface-variant">They don't even need Taplo yet. The gift creates their pass automatically.</p>
       </div>
+    </div>
+    <div class="bg-surface-container-lowest p-6 rounded-2xl editorial-shadow">
+      <p class="font-bold text-sm mb-3">Get notified when gifting launches</p>
+      <form class="flex gap-3" onsubmit="event.preventDefault(); this.innerHTML='<p class=\'text-primary font-bold py-3\'>You\'re on the list! We\'ll let you know.</p>';">
+        <input type="email" required placeholder="your@email.com" class="flex-1 bg-surface-container-high rounded-full px-5 py-3 text-sm outline-none border-none placeholder:text-on-surface-variant/40 focus:ring-2 focus:ring-primary/20"/>
+        <button type="submit" class="bg-primary text-on-primary px-6 py-3 rounded-full text-sm font-bold shrink-0 active:scale-95 transition-transform">Notify Me</button>
+      </form>
     </div>
   </div>
   <div class="md:w-1/2">
@@ -346,8 +380,9 @@
     <div class="flex flex-col sm:flex-row justify-center gap-4">
       <button class="bg-surface text-primary px-12 py-6 rounded-full text-xl font-bold shadow-xl hover:scale-105 transition-transform flex items-center gap-3 mx-auto sm:mx-0">
         <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">wallet</span>
-        Add to Apple Wallet
+        Add to Wallet
       </button>
+      <p class="text-on-primary-container/60 text-sm mt-4">Works with Apple Wallet & Google Wallet</p>
     </div>
   </div>
   <!-- Grain texture in CTA -->
@@ -409,7 +444,13 @@
   </div>
   <div class="mt-12 pt-8 border-t border-[#1B6B4A]/5 flex flex-col md:flex-row justify-between items-center gap-4">
     <span class="text-sm text-on-surface-variant/50">&copy; 2026 Taplo. Crafted in Bali.</span>
-    <span class="text-sm text-on-surface-variant/50">hello@taplo.org</span>
+    <div class="flex items-center gap-6">
+      <a class="text-on-surface-variant/50 hover:text-[#1B6B4A] transition-colors flex items-center gap-1.5 text-sm" href="https://instagram.com/taplo.bali" target="_blank">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @taplo.bali
+      </a>
+      <span class="text-sm text-on-surface-variant/50">hello@taplo.org</span>
+    </div>
   </div>
 </div>
 </footer>
